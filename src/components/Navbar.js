@@ -5,24 +5,24 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="bg-gray-800 text-white">
+        <nav className="fixed w-full top-0 left-0 bg-stone-50 text-stone-700">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <Link to="/" className="text-2xl font-bold site-name">
-                            Xiaoya Zou
+                        <Link to="/" className="text-xl font-bold site-name">
+                            Xiaoya.greet()
                         </Link>
                     </div>
-                    <div className="hidden md:flex space-x-4">
+                    <div className="hidden md:flex space-x-4 font-bold">
                         <Link to="/" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                             Home
                         </Link>
                         <Link to="/about" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                             About
                         </Link>
-                        <Link to="/services" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
+                        {/* <Link to="/services" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                             Experience
-                        </Link>
+                        </Link> */}
                         <Link to="/contact" className="hover:bg-gray-700 px-3 py-2 rounded-md text-sm font-medium">
                             Projects
                         </Link>
@@ -54,10 +54,7 @@ const Navbar = () => {
                             About
                         </Link>
                         <Link to="/services" className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">
-                            Services
-                        </Link>
-                        <Link to="/contact" className="block hover:bg-gray-700 px-3 py-2 rounded-md text-base font-medium">
-                            Contact
+                            Projects
                         </Link>
                     </div>
                 </div>
