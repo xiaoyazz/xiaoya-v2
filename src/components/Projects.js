@@ -4,6 +4,8 @@ import { FaLink, FaRegFolderOpen } from "react-icons/fa6";
 import { GoLinkExternal } from "react-icons/go";
 import { AiOutlineFolder } from "react-icons/ai";
 import SmartFood from "../assets/SmartFood.png"
+import GEM from "../assets/GEM.png"
+import Feedback from "../assets/feedbackApp.png"
 
 
 const projects = [
@@ -16,18 +18,18 @@ const projects = [
         repoLink: "#"
     },
     {
-        title: "To-Do List",
+        title: "Workout G.E.M.",
         description:
-            "A to-do list app allowing users to create, cross, and clear tasks. Developed with HTML, CSS, and JavaScript. Saves data in localStorage.",
-        image: "path/to/todo-list-image.png", // Replace with your image path
+            "An Android mobile app designed to support individuals in their fitness by tracking their workout.",
+        image: GEM,
         liveLink: "#",
         repoLink: "#"
     },
     {
-        title: "My Bakery",
+        title: "Feedback",
         description:
-            "An online bakery shop allowing users to log in, view, and buy products. Developed with ASP.NET Core Blazor Server.",
-        image: "path/to/bakery-image.png", // Replace with your image path
+            "A React web app to collect user feedback and service ratings. Use JSON server as backend.",
+        image: Feedback,
         liveLink: "#",
         repoLink: "#"
     }
@@ -35,8 +37,8 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="max-w-4xl mx-auto mt-20 text-left">
-            <h2 className="text-4xl font-bold mb-6">Projects</h2>
+        <div className="max-w-4xl mx-auto px-4 mt-10 text-left">
+            <h2 className="text-2xl font-bold mb-6">Projects</h2>
             <div className="grid md:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                     <div
@@ -44,16 +46,15 @@ const Projects = () => {
                         className="relative group bg-stone-50 p-6 rounded-lg shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
                     >
 
-
                         {/* Image */}
                         <img
                             src={project.image}
                             alt={project.title}
-                            className="rounded-t-lg w-full h-48 object-cover mt-6 mb-6"
+                            className="rounded-t-lg w-full h-45 object-covermb-6"
                         />
 
                         {/* Project title */}
-                        <h3 className="text-lg font-semibold mb-2">{project.title}</h3>
+                        <h3 className="text-lg font-semibold mt-2 mb-2">{project.title}</h3>
 
                         {/* Description */}
                         <p className=" text-sm mb-4">{project.description}</p>
@@ -64,11 +65,11 @@ const Projects = () => {
                             <div className="flex gap-3">
 
                                 <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                                    <FaGithub className="text-xl hover:text-[#00a5b3]" />
+                                    <FaGithub className="text-xl hover:text-indigo-500" />
                                 </a>
 
                                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                    <FaLink className="text-xl hover:text-[#00a5b3]" />
+                                    <FaLink className="text-xl hover:text-indigo-500" />
                                 </a>
 
                             </div>
@@ -81,7 +82,7 @@ const Projects = () => {
                     href="https://github.com/xiaoyazz"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#00C2D1] transition-colors font-bold underline"
+                    className="hover:text-indigo-500 transition-colors font-bold underline"
                 >
                     All Projects
                 </a>

@@ -9,6 +9,7 @@ const Experience = () => {
             location: "Oakville, Ontario, Canada",
             date: "May 2023 - Dec 2023 (Contract)",
             details: [
+                "Developed an Android app with Firebase to collect Wi-Fi APs in the college.",
                 "Developed Machine Learning models for Telus to implement a 3-D indoor location system.",
                 "Refined the accuracy and precision of the new system."
             ]
@@ -26,9 +27,9 @@ const Experience = () => {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto px-4 mt-20 text-left">
+        <div className="max-w-4xl mx-auto px-4 mt-10 text-left">
             {/* Top heading */}
-            <h2 className="text-4xl font-bold mb-6">Experience</h2>
+            <h2 className="text-2xl font-bold mb-6">Experience</h2>
 
             {/* Experience list */}
             <div className="space-y-8">
@@ -36,7 +37,7 @@ const Experience = () => {
                     <div key={index}>
                         <h3 className="text-lg font-semibold">
                             {experience.title} @{" "}
-                            <span className="text-[#00C2D1]">
+                            <span className="text-indigo-500">
                                 {experience.company}
                             </span>
                         </h3>
@@ -45,8 +46,8 @@ const Experience = () => {
                         </p>
                         <ul className="space-y-2">
                             {experience.details.map((detail, idx) => (
-                                <li key={idx} className="flex items-center gap-2">
-                                    <FaAngleRight color="#00C2D1" />
+                                <li key={idx} className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:scale-105 hover:text-indigo-500 hover:text-shadow">
+                                    <FaAngleRight />
                                     {detail}
                                 </li>
                             ))}
@@ -54,6 +55,7 @@ const Experience = () => {
                     </div>
                 ))}
             </div>
+            <hr className="border-t my-4 mt-12" />
         </div>
     );
 };

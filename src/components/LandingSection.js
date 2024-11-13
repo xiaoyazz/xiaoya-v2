@@ -10,17 +10,17 @@ const LandingPage = () => {
             <img
                 src={avatar}
                 alt="Xiaoya's Avatar"
-                className="w-20 h-22 mt-12"
+                className="w-22 h-24 mt-12"
             />
-            <div className="mt-2 max-w-md">
-                <h1 className="text-3xl font-bold">Hi, I'm Xiaoya.</h1>
+            <div className="mt-10 max-w-md">
+                <h1 className="text-3xl font-bold"> Hi, I'm <span className="text-indigo-500">Xiaoya</span>.</h1>
                 <h3 className="text-2xl font-bold">I create, build, and explore technology.</h3>
                 <p className="text-lg mt-4">
                     I'm a student developer based in Toronto, Canada. I'm passionate about full-stack development, mobile computing, and AI.
                 </p>
             </div>
 
-            <div className="animate-bounce mt-4">
+            <div className="animate-bounce mt-12">
                 <img src={scrollDownIcon} alt="Scroll Down" className="h-20 w-20" />
             </div>
 

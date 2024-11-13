@@ -5,10 +5,10 @@ const Footer = () => {
         <footer className="w-full mt-12 py-6 mb-10">
             <div className="max-w-4xl mx-auto text-center">
                 <div className="flex justify-center gap-4 mb-4">
-                    <a href="https://www.linkedin.com/in/xiaoyazou/" target="_blank" rel="noopener noreferrer">
+                    <a href="https://www.linkedin.com/in/xiaoyazou/" target="_blank" rel="noopener noreferrer" className='hover:text-indigo-500'>
                         <FaLinkedin size={20} />
                     </a>
-                    <a href="https://github.com/xiaoyazz" target="_blank" rel="noopener noreferrer">
+                    <a href="https://github.com/xiaoyazz" target="_blank" rel="noopener noreferrer" className='hover:text-indigo-500'>
                         <FaGithub size={20} />
                     </a>
                 </div>
