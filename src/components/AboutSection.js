@@ -2,12 +2,12 @@ import { FaAngleRight } from 'react-icons/fa';
 
 const AboutSection = () => {
     return (
+
         <div className="text-left mt-2 px-4 max-w-4xl mx-auto">
             <h2 className="text-2xl font-bold mb-4">About me</h2>
             <p className="mb-8">
-                My first name is pronounced as "Shi-ao-ya."
                 I am currently a third-year Computer Science student.
-                I enjoy applying strategies to solve complex problems with creativity and innovation.
+                I'm passionate about full-stack development, mobile computing, and AI.
                 Outside of school and work, I like camping, cycling, snowboarding, and video games.
             </p>
 

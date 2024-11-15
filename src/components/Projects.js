@@ -69,7 +69,7 @@ const Projects = () => {
                                 </a>
 
                                 <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                    <FaLink className="text-xl hover:text-indigo-500" />
+                                    <FaExternalLinkAlt className="text-xl hover:text-indigo-500" />
                                 </a>
 
                             </div>
@@ -88,7 +88,7 @@ const Projects = () => {
                 </a>
             </p>
 
-        </div>
+            <hr className="border-t my-4 mt-12" /></div>
     );
 };
 
