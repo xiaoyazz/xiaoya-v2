@@ -7,10 +7,10 @@ const LandingPage = () => {
         <div className="text-left mt-48 px-4 max-w-4xl mx-auto relative">
             {/* Fixed Blurred Background */}
             <div
-                className="fixed inset-0 bg-indigo-300 blur-[1050px] z-[-1]"
+                className="fixed inset-0 bg-indigo-400 blur-[700px] z-[-1]"
                 style={{
                     width: '100vw',
-                    height: '400px',
+                    height: '150px',
                     top: '30%',
                     left: '',
                     //transform: 'translate(-50%, 0)',

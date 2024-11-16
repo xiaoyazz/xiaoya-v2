@@ -6,6 +6,8 @@ import { AiOutlineFolder } from "react-icons/ai";
 import SmartFood from "../assets/SmartFood.png"
 import GEM from "../assets/GEM.png"
 import Feedback from "../assets/feedbackApp.png"
+import QuizApp from "../assets/quiz.jpeg"
+import WeatherApp from "../assets/WeatherApp.png"
 
 
 const projects = [
@@ -14,8 +16,8 @@ const projects = [
         description:
             "An iOS mobile app allowing users to manage food in their fridge. Users can view, add, edit, and delete food item, and enable/disable expiry notification.",
         image: SmartFood,
-        liveLink: "#",
-        repoLink: "#"
+        liveLink: "https://github.com/xiaoyazz/Smart-Food",
+        repoLink: "https://github.com/xiaoyazz/Smart-Food"
     },
     {
         title: "Workout G.E.M.",
@@ -34,12 +36,20 @@ const projects = [
         repoLink: "#"
     },
     {
-        title: "Wi-Fi Scanner",
+        title: "My Quiz App",
         description:
-            "A React web app to collect user feedback and service ratings. Use JSON server as backend.",
-        image: Feedback,
-        liveLink: "#",
-        repoLink: "#"
+            "Allow user to take quizzes with the multiple categories. Developped with JavaScript, HTML, CSS, and open quiz API",
+        image: QuizApp,
+        liveLink: "https://xiaoyazz.github.io/Quiz/",
+        repoLink: "https://github.com/xiaoyazz/Quiz"
+    },
+    {
+        title: "My Weather",
+        description:
+            "Provide location, weather, humidity, wind, pressure, and a 5-day weather forecast. Integrated with Location API and Weather API.",
+        image: WeatherApp,
+        liveLink: "https://xiaoyazz.github.io/Weather-Application/",
+        repoLink: "https://github.com/xiaoyazz/Weather-Application?tab=readme-ov-file"
     }
 ];
 
@@ -51,7 +61,7 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="relative bg-opacity-60 bg-slate-50 hover:bg-opacity-90 p-4 rounded-lg shadow-lg transform transition duration-300 hover:-translate-y-2 flex flex-col"
+                        className="relative bg-opacity-60 bg-slate-50 hover:bg-opacity-95 hover:shadow-lg p-4 rounded-lg shadow-md transform transition duration-300 hover:-translate-y-2 flex flex-col"
                     >
                         {/* Image */}
                         <img
