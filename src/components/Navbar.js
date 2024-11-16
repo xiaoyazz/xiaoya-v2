@@ -12,7 +12,7 @@ const Navbar = () => {
     };
 
     return (
-        <nav className="fixed w-full top-0 left-0 bg-stone-50 dark:bg-blue-950 dark:text-slate-200 z-10">
+        <nav className="fixed w-full top-0 left-0 bg-transparent backdrop-blur-md dark:bg-blue-950 dark:text-slate-200 shadow-md z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
@@ -22,16 +22,16 @@ const Navbar = () => {
                         {/* <DarkModeToggle /> */}
                     </div>
                     <div className="hidden md:flex space-x-4 font-bold">
-                        <Link to="/" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="/" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm">
                             Home
                         </Link>
-                        <Link to="/about" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="/about" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm">
                             About
                         </Link>
-                        <Link to="/services" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="/services" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm">
                             Experience
                         </Link>
-                        <Link to="/contact" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm font-medium">
+                        <Link to="/contact" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm">
                             Projects
                         </Link>
                     </div>

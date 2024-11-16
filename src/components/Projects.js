@@ -12,7 +12,7 @@ const projects = [
     {
         title: "Smart Food",
         description:
-            "An iOS mobile app allowing users to manage food in their fridge.",
+            "An iOS mobile app allowing users to manage food in their fridge. Users can view, add, edit, and delete food item, and enable/disable expiry notification.",
         image: SmartFood,
         liveLink: "#",
         repoLink: "#"
@@ -32,6 +32,14 @@ const projects = [
         image: Feedback,
         liveLink: "#",
         repoLink: "#"
+    },
+    {
+        title: "Wi-Fi Scanner",
+        description:
+            "A React web app to collect user feedback and service ratings. Use JSON server as backend.",
+        image: Feedback,
+        liveLink: "#",
+        repoLink: "#"
     }
 ];
 
@@ -43,41 +51,54 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="relative group bg-stone-50 p-6 rounded-lg shadow-lg transform transition duration-300 hover:-translate-y-2 hover:shadow-2xl"
+                        className="relative bg-opacity-60 bg-slate-50 hover:bg-opacity-90 p-4 rounded-lg shadow-lg transform transition duration-300 hover:-translate-y-2 flex flex-col"
                     >
-
                         {/* Image */}
                         <img
                             src={project.image}
                             alt={project.title}
-                            className="rounded-t-lg w-full h-45 object-covermb-6"
+                            className="rounded-lg w-full h-50 object-cover mb-4"
                         />
 
                         {/* Project title */}
                         <h3 className="text-lg font-semibold mt-2 mb-2">{project.title}</h3>
 
                         {/* Description */}
-                        <p className=" text-sm mb-4">{project.description}</p>
+                        <p className="text-sm mb-4" style={{
+                            overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", textOverflow: "ellipsis"
+                        }}>
+                            {project.description}
+                        </p>
 
-                        {/* Top section with icon and links */}
-                        <div className="flex justify-between items-center mb-4">
-
+                        {/* Bottom Section */}
+                        <div className="flex justify-between items-center mt-4 mb-4">
+                            <a href="#" className="text-sm font-semibold hover:text-indigo-500 underline">
+                                Read More
+                            </a>
                             <div className="flex gap-3">
-
-                                <a href={project.repoLink} target="_blank" rel="noopener noreferrer">
-                                    <FaGithub className="text-xl hover:text-indigo-500" />
+                                <a
+                                    href={project.repoLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xl hover:text-indigo-500"
+                                >
+                                    <FaGithub />
                                 </a>
-
-                                <a href={project.liveLink} target="_blank" rel="noopener noreferrer">
-                                    <FaExternalLinkAlt className="text-xl hover:text-indigo-500" />
+                                <a
+                                    href={project.liveLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xl hover:text-indigo-500"
+                                >
+                                    <FaExternalLinkAlt />
                                 </a>
-
                             </div>
                         </div>
                     </div>
+
                 ))}
             </div>
-            <p className="mt-6">
+            <p className="mt-12">
                 <a
                     href="https://github.com/xiaoyazz"
                     target="_blank"
@@ -88,7 +109,7 @@ const Projects = () => {
                 </a>
             </p>
 
-            <hr className="border-t my-4 mt-12" /></div>
+            <hr className="border-t my-4 mt-8" /></div>
     );
 };
 

@@ -27,7 +27,8 @@ const Experience = () => {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto px-4 mt-10 text-left">
+        <div className="max-w-4xl mx-auto pt-8 pb-8 px-4 text-left shadow-sm bg-white bg-opacity-40">
+
             {/* Top heading */}
             <h2 className="text-2xl font-bold mb-6">Experience</h2>
 
@@ -46,7 +47,7 @@ const Experience = () => {
                         </p>
                         <ul className="space-y-2">
                             {experience.details.map((detail, idx) => (
-                                <li key={idx} className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:scale-105 hover:text-indigo-500 hover:text-shadow">
+                                <li key={idx} className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover:text-indigo-500 hover-text-shadow">
                                     <FaAngleRight />
                                     {detail}
                                 </li>
@@ -55,7 +56,7 @@ const Experience = () => {
                     </div>
                 ))}
             </div>
-            <hr className="border-t my-4 mt-12" />
+            {/* <hr className="border-t my-4 mt-12" /> */}
         </div>
     );
 };
