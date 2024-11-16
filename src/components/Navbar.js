@@ -31,7 +31,7 @@ const Navbar = () => {
                         <Link to="/services" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm">
                             Experience
                         </Link>
-                        <Link to="/contact" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm">
+                        <Link to="/projects" className="hover:text-indigo-500 dark:hover:text-teal-300 px-3 py-2 rounded-md text-sm">
                             Projects
                         </Link>
                     </div>
