@@ -55,13 +55,13 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="max-w-4xl mx-auto px-4 mt-10 text-left">
+        <div className="max-w-4xl mx-auto px-0 mt-10 text-left">
             <h2 className="text-2xl font-bold mb-6">Projects</h2>
             <div className="grid md:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="relative bg-opacity-60 bg-slate-50 hover:bg-opacity-95 hover:shadow-lg p-4 rounded-lg shadow-md transform transition duration-300 hover:-translate-y-2 flex flex-col"
+                        className="relative shadow-md rounded-md bg-white bg-opacity-80 hover:bg-opacity-95 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col"
                     >
                         {/* Image */}
                         <img
@@ -82,15 +82,15 @@ const Projects = () => {
 
                         {/* Bottom Section */}
                         <div className="flex justify-between items-center mt-4 mb-4">
-                            <a href="#" className="text-sm font-semibold hover:text-indigo-500 underline">
+                            <a href="#" className="text-sm font-semibold hover:text-[#dd8ea4] underline">
                                 Read More
                             </a>
-                            <div className="flex gap-3">
+                            {/* <div className="flex gap-3">
                                 <a
                                     href={project.repoLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-xl hover:text-indigo-500"
+                                    className="text-xl hover:text-[#dd8ea4]"
                                 >
                                     <FaGithub />
                                 </a>
@@ -98,24 +98,24 @@ const Projects = () => {
                                     href={project.liveLink}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="text-xl hover:text-indigo-500"
+                                    className="text-xl hover:text-[#dd8ea4]"
                                 >
                                     <FaExternalLinkAlt />
                                 </a>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 
                 ))}
             </div>
-            <p className="mt-12">
+            <p className="mt-12 px-1">
                 <a
                     href="https://github.com/xiaoyazz"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-indigo-500 transition-colors font-bold underline"
+                    className="hover:text-[#dd8ea4] transition-colors font-bold underline"
                 >
-                    All Projects
+                    More Projects
                 </a>
             </p>
 

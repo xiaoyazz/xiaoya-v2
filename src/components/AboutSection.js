@@ -3,7 +3,7 @@ import { FaAngleRight } from 'react-icons/fa';
 const AboutSection = () => {
     return (
 
-        <div className="text-left mt-10 mb-6 pt-8 pb-8 px-4 max-w-4xl mx-auto shadow-sm bg-white bg-opacity-40">
+        <div className="text-left mt-10 mb-6 pt-8 pb-8 px-4 max-w-4xl mx-auto shadow-md rounded-md bg-white bg-opacity-80">
             <h2 className="text-2xl font-bold mb-4">About me</h2>
             <p className="mb-8">
                 I am currently a third-year Computer Science student.
@@ -32,7 +32,7 @@ const AboutSection = () => {
                     ].map((tech, index) => (
                         <li
                             key={index}
-                            className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover-text-shadow hover:text-indigo-500"
+                            className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover-text-shadow hover:text-[#dd8ea4]"
                         >
                             <FaAngleRight />
                             {tech}

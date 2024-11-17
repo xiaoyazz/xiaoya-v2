@@ -1,28 +1,22 @@
-import './App.css';
-import Navbar from './components/Navbar';
-import AboutSection from './components/AboutSection';
-import Gallery from './components/Gallery';
-import Landing from './components/LandingSection';
-import Projects from './components/Projects';
-import Experience from './components/Experience';
-import Footer from './components/Footer'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import About from "./components/AboutSection";
+import Experience from "./components/Experience";
 import ProjectsPage from "./pages/ProjectsPage";
-import { Route, Routes } from 'react-router-dom';
+import Footer from "./components/Footer"
+import { ImOpt } from "react-icons/im";
 
 function App() {
   return (
     <div className="App">
-
       <Navbar />
       <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/about" element={<AboutSection />} />
+        <Route path="/" element={<HomePage />} />
+        {/* <Route path="/about" element={<About />} />
+        <Route path="/experience" element={<Experience />} /> */}
         <Route path="/projects" element={<ProjectsPage />} />
       </Routes>
-      <Landing />
-      <AboutSection />
-      <Experience />
-      <Projects />
       <Footer />
     </div>
   );

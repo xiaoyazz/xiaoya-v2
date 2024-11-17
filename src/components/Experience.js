@@ -27,7 +27,7 @@ const Experience = () => {
     ];
 
     return (
-        <div className="max-w-4xl mx-auto pt-8 pb-8 px-4 text-left shadow-sm bg-white bg-opacity-40">
+        <div className="max-w-4xl mx-auto pt-8 pb-8 px-4 text-left shadow-md rounded-md bg-white bg-opacity-80">
 
             {/* Top heading */}
             <h2 className="text-2xl font-bold mb-6">Experience</h2>
@@ -38,7 +38,7 @@ const Experience = () => {
                     <div key={index}>
                         <h3 className="text-lg font-semibold">
                             {experience.title} @{" "}
-                            <span className="text-indigo-500">
+                            <span className="">
                                 {experience.company}
                             </span>
                         </h3>
@@ -47,7 +47,7 @@ const Experience = () => {
                         </p>
                         <ul className="space-y-2">
                             {experience.details.map((detail, idx) => (
-                                <li key={idx} className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover:text-indigo-500 hover-text-shadow">
+                                <li key={idx} className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover:text-[#dd8ea4] hover-text-shadow">
                                     <FaAngleRight />
                                     {detail}
                                 </li>

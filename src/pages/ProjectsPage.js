@@ -1,72 +1,82 @@
 import React from "react";
-import { FaExternalLinkAlt, FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 
 const projects = [
     {
         title: "Smart Food",
-        description: "An iOS mobile app allowing users to manage food in their fridge.",
+        description:
+            "An iOS mobile app allowing users to manage food in their fridge.",
         tags: ["Full-stack", "React", "iOS"],
-        image: "path_to_image",
         date: "Oct 8, 2023",
-        repoLink: "#",
         liveLink: "#",
+        repoLink: "#",
     },
     {
         title: "Workout G.E.M.",
-        description: "An Android app designed to support individuals in their fitness by tracking their workout.",
+        description:
+            "An Android app designed to support individuals in their fitness by tracking their workout.",
         tags: ["Frontend", "React", "Android"],
-        image: "path_to_image",
         date: "Feb 13, 2023",
-        repoLink: "#",
         liveLink: "#",
+        repoLink: "#",
     },
     // Add more projects here...
 ];
 
 const ProjectsPage = () => {
     return (
-        <div className="max-w-6xl mx-auto px-4 py-12">
-            <h1 className="text-3xl font-bold mb-8">Project List</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="max-w-7xl mx-auto px-6 py-10">
+            <h1 className="text-3xl font-bold mb-6">Project List</h1>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="bg-white shadow-lg rounded-lg p-6 flex flex-col gap-4 transition transform hover:scale-105"
+                        className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex flex-col justify-between"
                     >
-                        <img
-                            src={project.image}
-                            alt={project.title}
-                            className="w-full h-40 object-cover rounded"
-                        />
-                        <h2 className="text-xl font-semibold">{project.title}</h2>
-                        <p className="text-sm text-gray-600">{project.description}</p>
-                        <div className="flex flex-wrap gap-2">
-                            {project.tags.map((tag, idx) => (
-                                <span
-                                    key={idx}
-                                    className="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded"
-                                >
-                                    {tag}
-                                </span>
-                            ))}
+                        {/* Project Title */}
+                        <div>
+                            <h2 className="text-xl font-semibold mb-2">
+                                {project.title}
+                            </h2>
+                            {/* Description */}
+                            <p className="text-sm mb-4 text-gray-700 dark:text-gray-300">
+                                {project.description}
+                            </p>
+                            {/* Tags */}
+                            <div className="flex flex-wrap gap-2 mb-4">
+                                {project.tags.map((tag, idx) => (
+                                    <span
+                                        key={idx}
+                                        className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs font-semibold px-2 py-1 rounded"
+                                    >
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
                         </div>
-                        <div className="text-xs text-gray-400">{project.date}</div>
+                        {/* Date */}
+                        <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
+                            {project.date}
+                        </p>
+                        {/* Links */}
                         <div className="flex justify-between items-center mt-4">
                             <a
                                 href={project.repoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-indigo-500 hover:underline"
+                                className="text-indigo-500 dark:text-indigo-300 hover:underline text-sm"
                             >
-                                <FaGithub />
+                                <FaGithub className="inline mr-1" />
+                                GitHub
                             </a>
                             <a
                                 href={project.liveLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-indigo-500 hover:underline"
+                                className="text-indigo-500 dark:text-indigo-300 hover:underline text-sm"
                             >
-                                <FaExternalLinkAlt />
+                                <FaExternalLinkAlt className="inline mr-1" />
+                                Live Demo
                             </a>
                         </div>
                     </div>
