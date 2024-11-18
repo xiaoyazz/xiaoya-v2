@@ -1,5 +1,5 @@
 import React from "react";
-import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaRegFolder } from "react-icons/fa";
 
 const projects = [
     {
@@ -20,69 +20,73 @@ const projects = [
         liveLink: "#",
         repoLink: "#",
     },
-    // Add more projects here...
+
 ];
 
 const ProjectsPage = () => {
     return (
-        <div className="max-w-7xl mx-auto px-6 py-10">
-            <h1 className="text-3xl font-bold mb-6">Project List</h1>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="max-w-4xl mx-auto mt-48 px-4 text-left">
+            <h2 className="text-2xl font-bold mb-6 dark:text-[#3bba9c]">Projects</h2>
+            <div className="grid md:grid-cols-2 gap-2">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="bg-white dark:bg-gray-800 rounded-lg shadow-md p-6 flex flex-col justify-between"
+                        className="relative shadow-md rounded-md bg-white bg-opacity-80 hover:bg-opacity-95 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col  dark:bg-opacity-5 dark:shadow-gray-900"
                     >
-                        {/* Project Title */}
-                        <div>
-                            <h2 className="text-xl font-semibold mb-2">
-                                {project.title}
-                            </h2>
-                            {/* Description */}
-                            <p className="text-sm mb-4 text-gray-700 dark:text-gray-300">
-                                {project.description}
-                            </p>
-                            {/* Tags */}
-                            <div className="flex flex-wrap gap-2 mb-4">
-                                {project.tags.map((tag, idx) => (
-                                    <span
-                                        key={idx}
-                                        className="bg-indigo-100 dark:bg-indigo-900 text-indigo-800 dark:text-indigo-200 text-xs font-semibold px-2 py-1 rounded"
-                                    >
-                                        {tag}
-                                    </span>
-                                ))}
-                            </div>
+                        <div className="flex jitems-center mb-4">
+                            <FaRegFolder className="text-4xl text-[#dd8ea4] dark:text-[#3bba9c]" />
                         </div>
-                        {/* Date */}
-                        <p className="text-xs text-gray-500 dark:text-gray-400 mb-4">
-                            {project.date}
+
+                        {/* Project title */}
+                        <h3 className="text-lg font-semibold mt-2 mb-2">{project.title}</h3>
+
+                        {/* Description */}
+                        <p className="text-sm mb-4" style={{
+                            overflow: "hidden", display: "-webkit-box", WebkitLineClamp: 3, WebkitBoxOrient: "vertical", textOverflow: "ellipsis"
+                        }}>
+                            {project.description}
                         </p>
-                        {/* Links */}
-                        <div className="flex justify-between items-center mt-4">
-                            <a
-                                href={project.repoLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-indigo-500 dark:text-indigo-300 hover:underline text-sm"
-                            >
-                                <FaGithub className="inline mr-1" />
-                                GitHub
+
+                        {/* Bottom Section */}
+                        <div className="flex justify-between items-center mt-4 mb-4">
+                            <a href="#" className="text-sm font-semibold hover:text-[#dd8ea4] underline dark:hover:text-[#3bba9c]">
+                                Read More
                             </a>
-                            <a
-                                href={project.liveLink}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="text-indigo-500 dark:text-indigo-300 hover:underline text-sm"
-                            >
-                                <FaExternalLinkAlt className="inline mr-1" />
-                                Live Demo
-                            </a>
+                            {/* <div className="flex gap-3">
+                                <a
+                                    href={project.repoLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xl hover:text-[#dd8ea4]"
+                                >
+                                    <FaGithub />
+                                </a>
+                                <a
+                                    href={project.liveLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="text-xl hover:text-[#dd8ea4]"
+                                >
+                                    <FaExternalLinkAlt />
+                                </a>
+                            </div> */}
                         </div>
                     </div>
+
                 ))}
             </div>
-        </div>
+            <p className="mt-12 px-1">
+                <a
+                    href="https://github.com/xiaoyazz"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-[#dd8ea4] transition-colors font-bold underline dark:hover:text-[#3bba9c]"
+                >
+                    More Projects on Github
+                </a>
+            </p>
+
+            <hr className="border-t my-4 mt-8" /></div>
     );
 };
 
