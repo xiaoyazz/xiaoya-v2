@@ -6,7 +6,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed w-full top-0 left-0 bg-white bg-opacity-90 shadow-md z-10">
+        <nav className="fixed w-full top-0 left-0 bg-stone-50 bg-opacity-40 backdrop-blur-md shadow-md z-10">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Left Section */}
@@ -39,9 +39,6 @@ const Navbar = () => {
                         <Link to="/" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm">
                             Home
                         </Link>
-                        <Link to="/about" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm">
-                            About
-                        </Link>
                         <Link to="/projects" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm">
                             Projects
                         </Link>
@@ -68,9 +65,6 @@ const Navbar = () => {
                     <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
                         <Link to="/" className="block hover:text-[#dd8ea4] px-3 py-2 rounded-md text-base font-medium">
                             Home
-                        </Link>
-                        <Link to="/about" className="block hover:bg-gray-200 px-3 py-2 rounded-md text-base font-medium">
-                            About
                         </Link>
                         <Link to="/projects" className="block hover:text-[#dd8ea4] px-3 py-2 rounded-md text-base font-medium">
                             Projects
