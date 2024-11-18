@@ -56,12 +56,12 @@ const projects = [
 const Projects = () => {
     return (
         <div className="max-w-4xl mx-auto px-0 mt-10 text-left">
-            <h2 className="text-2xl font-bold mb-6">Projects</h2>
+            <h2 className="text-2xl font-bold mb-6 dark:text-[#3bba9c]">Projects</h2>
             <div className="grid md:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="relative shadow-md rounded-md bg-white bg-opacity-80 hover:bg-opacity-95 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col"
+                        className="relative shadow-md rounded-md bg-white bg-opacity-80 hover:bg-opacity-95 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col  dark:bg-opacity-5 dark:shadow-gray-900"
                     >
                         {/* Image */}
                         <img
@@ -82,7 +82,7 @@ const Projects = () => {
 
                         {/* Bottom Section */}
                         <div className="flex justify-between items-center mt-4 mb-4">
-                            <a href="#" className="text-sm font-semibold hover:text-[#dd8ea4] underline">
+                            <a href="#" className="text-sm font-semibold hover:text-[#dd8ea4] underline dark:hover:text-[#3bba9c]">
                                 Read More
                             </a>
                             {/* <div className="flex gap-3">
@@ -113,7 +113,7 @@ const Projects = () => {
                     href="https://github.com/xiaoyazz"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#dd8ea4] transition-colors font-bold underline"
+                    className="hover:text-[#dd8ea4] transition-colors font-bold underline dark:hover:text-[#3bba9c]"
                 >
                     More Projects
                 </a>

@@ -23,9 +23,9 @@ const DarkModeToggle = () => {
     return (
         <button onClick={toggleDarkMode} className="p-2 rounded-full focus:outline-none">
             {darkMode ? (
-                <BsSunFill className="text-xl dark:hover:text-teal-300" />
+                <BsSunFill className="text-xl dark:hover:text-[#3bba9c]" />
             ) : (
-                <BsMoonStarsFill className="text-xl" />
+                <BsMoonStarsFill className="text-xl hover:text-[#dd8ea4]" />
             )}
         </button>
     );

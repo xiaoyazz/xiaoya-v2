@@ -24,7 +24,7 @@ const LandingPage = () => {
                 className="w-20 h-22 animate-bounce"
             />
             <h1 className="text-5xl font-bold mt-8">
-                Hi, I'm <span className="high-light">Xiaoya</span>.
+                Hi, I'm <span className="high-light dark:text-[#3bba9c]">Xiaoya</span>.
             </h1>
             <h3 className="text-2xl mt-4 font-bold">
                 I create, build, and explore technology.

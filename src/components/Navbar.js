@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
+import DarkModeToggle from './DarkModeToggle';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed w-full top-0 left-0 bg-stone-50 bg-opacity-40 backdrop-blur-md shadow-md z-10">
+        <nav className="fixed w-full top-0 left-0 bg-opacity-20 backdrop-blur-md shadow-md z-10 dark:shadow-gray-950">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     {/* Left Section */}
@@ -19,7 +20,7 @@ const Navbar = () => {
                                 href="https://www.linkedin.com/in/your-linkedin-profile"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hover:text-[#dd8ea4]"
+                                className="hover:text-[#dd8ea4] dark:hover:text-[#3bba9c]"
                             >
                                 <FaLinkedin size={20} />
                             </a>
@@ -27,7 +28,7 @@ const Navbar = () => {
                                 href="https://github.com/your-github-profile"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="text-gray-600 hhover:text-[#dd8ea4]"
+                                className="hover:text-[#dd8ea4] dark:hover:text-[#3bba9c]"
                             >
                                 <FaGithub size={20} />
                             </a>
@@ -36,10 +37,11 @@ const Navbar = () => {
 
                     {/* Right Section */}
                     <div className="hidden md:flex space-x-4 font-bold">
-                        <Link to="/" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm">
+                        <DarkModeToggle />
+                        <Link to="/" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm dark:hover:text-[#3bba9c]">
                             Home
                         </Link>
-                        <Link to="/projects" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm">
+                        <Link to="/projects" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm dark:hover:text-[#3bba9c]">
                             Projects
                         </Link>
                     </div>
