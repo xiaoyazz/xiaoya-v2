@@ -7,13 +7,12 @@ import Footer from '../components/Footer';
 
 const HomePage = () => {
     return (
-        <>
+        <div className="relative">
             <Landing />
             <AboutSection />
             <Experience />
             <Projects />
-
-        </>
+        </div>
     );
 };
 

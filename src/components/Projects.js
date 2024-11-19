@@ -8,6 +8,7 @@ import GEM from "../assets/GEM.png"
 import Feedback from "../assets/feedbackApp.png"
 import QuizApp from "../assets/quiz.jpeg"
 import WeatherApp from "../assets/WeatherApp.png"
+import Deco1 from "../assets/deco1.png"
 
 
 const projects = [
@@ -55,13 +56,23 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="max-w-4xl mx-auto px-0 mt-10 text-left">
-            <h2 className="text-2xl font-bold mb-6 dark:text-[#3bba9c]">Projects</h2>
+        <div className="relative max-w-4xl mx-auto mt-20 pt-8 mb-10 pb-8 px-6 text-left rounded-md shadow-md text-left bg-[#e2c7a7]">
+
+            <div className="absolute -top-25 left-[-22%] transform -rotate-[36deg] translate-x-1/5 z-[-0.9]">
+                <img
+                    src={Deco1}
+                    alt="Decorative Element 1"
+                    className="w-48 md:w-54 lg:w-80"
+                />
+            </div>
+
+            <h2 className="text-2xl font-bold mt-4 mb-6 dark:text-[#3bba9c]">Projects</h2>
+
             <div className="grid md:grid-cols-3 gap-6">
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="relative shadow-md rounded-md bg-white bg-opacity-80 hover:bg-opacity-95 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col  dark:bg-opacity-5 dark:shadow-gray-900"
+                        className="relative shadow-md rounded-md bg-[#f7f7ed] bg-opacity-90 hover:bg-opacity-100 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col  dark:bg-opacity-5 dark:shadow-gray-900"
                     >
                         {/* Image */}
                         <img
@@ -119,7 +130,7 @@ const Projects = () => {
                 </a>
             </p>
 
-            <hr className="border-t my-4 mt-8" /></div>
+        </div>
     );
 };
 

@@ -1,6 +1,7 @@
 import React from 'react';
 import avatar from '../assets/avatar.png';
 import villagerMe from '../assets/villagerMe.png'
+import Deco0 from '../assets/deco0.png'
 
 const LandingPage = () => {
     return (
@@ -17,7 +18,11 @@ const LandingPage = () => {
                 }}
             ></div> */}
 
-            {/* Avatar and Text */}
+            {/* <img
+                src={Deco0}
+                alt="Banner"
+            /> */}
+
             <img
                 src={villagerMe}
                 alt="Xiaoya's Avatar"
