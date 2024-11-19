@@ -56,15 +56,15 @@ const projects = [
 
 const Projects = () => {
     return (
-        <div className="relative max-w-4xl mx-auto mt-20 pt-8 mb-10 pb-8 px-6 text-left rounded-md shadow-md text-left bg-[#e2c7a7]">
+        <div className="relative max-w-4xl mx-auto mt-20 pt-8 mb-10 pb-8 px-6 text-left rounded-md shadow-md text-left bg-[#e2c7a7] dark:bg-opacity-5 dark:shadow-gray-950">
 
-            <div className="absolute -top-25 left-[-22%] transform -rotate-[36deg] translate-x-1/5 z-[-0.9]">
+            {/* <div className="absolute -top-25 left-[-22%] transform -rotate-[36deg] translate-x-1/5 z-[-0.9]">
                 <img
                     src={Deco1}
                     alt="Decorative Element 1"
                     className="w-48 md:w-54 lg:w-80"
                 />
-            </div>
+            </div> */}
 
             <h2 className="text-2xl font-bold mt-4 mb-6 dark:text-[#3bba9c]">Projects</h2>
 
@@ -72,7 +72,7 @@ const Projects = () => {
                 {projects.map((project, index) => (
                     <div
                         key={index}
-                        className="relative shadow-md rounded-md bg-[#f7f7ed] bg-opacity-90 hover:bg-opacity-100 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col  dark:bg-opacity-5 dark:shadow-gray-900"
+                        className="relative shadow-md rounded-md bg-[#f7f7ed] bg-opacity-90 hover:bg-opacity-100 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col  dark:bg-white dark:bg-opacity-5 dark:hover:bg-opacity-10 dark:shadow-gray-950"
                     >
                         {/* Image */}
                         <img

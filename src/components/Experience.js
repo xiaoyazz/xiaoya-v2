@@ -29,15 +29,15 @@ const Experience = () => {
     ];
 
     return (
-        <div className="relative max-w-4xl mx-auto mt-20 pt-8 mb-10 pb-8 px-6 text-left shadow-md rounded-md bg-white bg-opacity-100  dark:bg-opacity-5 dark:shadow-gray-900">
+        <div className="relative max-w-4xl mx-auto mt-20 pt-8 mb-10 pb-8 px-6 text-left shadow-md rounded-md bg-white bg-opacity-100  dark:bg-opacity-5 dark:shadow-gray-950">
 
-            <div className="absolute -top-25 right-[-15%] rotate-[10deg] transform translate-x-1/6 z-[-0.5]">
+            {/* <div className="absolute -top-25 right-[-15%] rotate-[10deg] transform translate-x-1/6 z-[-0.5]">
                 <img
                     src={Strawberry}
                     alt="Decorative Element 1"
                     className="w-48 md:w-54 lg:w-80"
                 />
-            </div>
+            </div> */}
 
 
             {/* Top heading */}
