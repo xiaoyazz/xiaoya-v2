@@ -25,7 +25,7 @@ const DarkModeToggle = () => {
             {darkMode ? (
                 <BsSunFill className="text-xl dark:hover:text-[#3bba9c]" />
             ) : (
-                <BsMoonStarsFill className="text-xl hover:text-[#dd8ea4]" />
+                <BsMoonStarsFill className="text-xl hover:text-[#9c505a]" />
             )}
         </button>
     );

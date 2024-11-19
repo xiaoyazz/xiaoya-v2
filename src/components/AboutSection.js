@@ -32,7 +32,7 @@ const AboutSection = () => {
                     ].map((tech, index) => (
                         <li
                             key={index}
-                            className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover-text-shadow hover:text-[#dd8ea4] dark:hover:text-[#3bba9c]"
+                            className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover-text-shadow hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
                         >
                             <FaAngleRight />
                             {tech}

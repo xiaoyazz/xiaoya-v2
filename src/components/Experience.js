@@ -58,7 +58,7 @@ const Experience = () => {
                         </p>
                         <ul className="space-y-2">
                             {experience.details.map((detail, idx) => (
-                                <li key={idx} className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover:text-[#dd8ea4] hover-text-shadow dark:hover:text-[#3bba9c]">
+                                <li key={idx} className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover:text-[#9c505a] hover-text-shadow dark:hover:text-[#3bba9c]">
                                     <FaAngleRight />
                                     {detail}
                                 </li>

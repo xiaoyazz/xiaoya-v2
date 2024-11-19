@@ -93,7 +93,7 @@ const Projects = () => {
 
                         {/* Bottom Section */}
                         <div className="flex justify-between items-center mt-4 mb-4">
-                            <a href="#" className="text-sm font-semibold hover:text-[#dd8ea4] underline dark:hover:text-[#3bba9c]">
+                            <a href="#" className="text-sm font-semibold hover:text-[#9c505a] underline dark:hover:text-[#3bba9c]">
                                 Read More
                             </a>
                             {/* <div className="flex gap-3">
@@ -121,10 +121,10 @@ const Projects = () => {
             </div>
             <p className="mt-12 px-1">
                 <a
-                    href="https://github.com/xiaoyazz"
-                    target="_blank"
+                    href="/projects"
+                    target=""
                     rel="noopener noreferrer"
-                    className="hover:text-[#dd8ea4] transition-colors font-bold underline dark:hover:text-[#3bba9c]"
+                    className="hover:text-[#9c505a] transition-colors font-bold underline dark:hover:text-[#3bba9c]"
                 >
                     More Projects
                 </a>

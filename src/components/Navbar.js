@@ -20,7 +20,7 @@ const Navbar = () => {
                                 href="https://www.linkedin.com/in/your-linkedin-profile"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-[#dd8ea4] dark:hover:text-[#3bba9c]"
+                                className="hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
                             >
                                 <FaLinkedin size={20} />
                             </a>
@@ -28,7 +28,7 @@ const Navbar = () => {
                                 href="https://github.com/your-github-profile"
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="hover:text-[#dd8ea4] dark:hover:text-[#3bba9c]"
+                                className="hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
                             >
                                 <FaGithub size={20} />
                             </a>
@@ -38,10 +38,10 @@ const Navbar = () => {
                     {/* Right Section */}
                     <div className="hidden md:flex space-x-4 font-bold">
                         <DarkModeToggle />
-                        <Link to="/" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm dark:hover:text-[#3bba9c]">
+                        <Link to="/" className="hover:text-[#9c505a] px-3 py-2 rounded-md text-sm dark:hover:text-[#3bba9c]">
                             Home
                         </Link>
-                        <Link to="/projects" className="hover:text-[#dd8ea4] px-3 py-2 rounded-md text-sm dark:hover:text-[#3bba9c]">
+                        <Link to="/projects" className="hover:text-[#9c505a] px-3 py-2 rounded-md text-sm dark:hover:text-[#3bba9c]">
                             Projects
                         </Link>
                     </div>
