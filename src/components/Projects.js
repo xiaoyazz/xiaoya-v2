@@ -9,7 +9,7 @@ import Feedback from "../assets/feedbackApp.png"
 import QuizApp from "../assets/quiz.jpeg"
 import WeatherApp from "../assets/WeatherApp.png"
 import Deco1 from "../assets/deco1.png"
-
+import { useParams, Link } from "react-router-dom";
 
 const projects = [
     {
@@ -119,16 +119,12 @@ const Projects = () => {
 
                 ))}
             </div>
-            <p className="mt-12 px-1">
-                <a
-                    href="/projects"
-                    target=""
-                    rel="noopener noreferrer"
-                    className="hover:text-[#9c505a] transition-colors font-bold underline dark:hover:text-[#3bba9c]"
-                >
-                    More Projects
-                </a>
-            </p>
+            <Link
+                to="/projects"
+                className="font-semibold underline hover:text-[#9c505a] mt-8 px-1 block"
+            >
+                More Projects
+            </Link>
 
         </div>
     );

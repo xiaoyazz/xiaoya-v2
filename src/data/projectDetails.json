@@ -2,10 +2,10 @@
     {
         "id": 1,
         "title": "My Weather",
-        "details": "A web app to display weather in different cities:\n\n• Provides location, weather, humidity, wind, pressure, and a 5-day weather forecast.\n• Responsive on different devices.\n\nTechnologies:\n• Developed with HTML, CSS, and JavaScript.\n• Weather API: https://openweathermap.org/api\n• Location API: https://openweathermap.org/api/geocoding-api",
+        "details": "• Display weather in different cities.\n• Provides location, weather, humidity, wind, pressure, and a 5-day weather forecast.\n• Responsive on different devices.\n• Developed with HTML, CSS, and JavaScript.\n• Weather API: https://openweathermap.org/api\n• Location API: https://openweathermap.org/api/geocoding-api",
         "images": [
             "weather1.jpeg",
-            "weather2.jpeg"
+            ""
         ],
         "repoLink": "https://github.com/xiaoyazz/Weather-Application",
         "liveLink": "https://xiaoyazz.github.io/Weather-Application/",
@@ -21,8 +21,8 @@
         "title": "My Quiz App",
         "details": "A quiz application that allows users to take quizzes in multiple categories. Built with JavaScript, HTML, and CSS, and integrated with the Open Quiz API to fetch dynamic questions.",
         "images": [
-            "/images/myquiz-1.png",
-            "/images/myquiz-2.png"
+            "",
+            ""
         ],
         "repoLink": "https://github.com/xiaoyazz/Quiz",
         "liveLink": "https://xiaoyazz.github.io/Quiz/",
@@ -37,8 +37,8 @@
         "title": "Feedback",
         "details": "A React web application for collecting user feedback and service ratings. It uses JSON Server as a mock backend to store and retrieve feedback data.",
         "images": [
-            "/images/feedback-1.png",
-            "/images/feedback-2.png"
+            "",
+            ""
         ],
         "repoLink": "#",
         "liveLink": "#",
@@ -54,8 +54,8 @@
         "title": "Workout G.E.M.",
         "details": "An Android application designed to support users in their fitness journey by tracking workouts, offering activity insights, and setting fitness goals.",
         "images": [
-            "/images/workoutgem-1.png",
-            "/images/workoutgem-2.png"
+            "",
+            ""
         ],
         "repoLink": "#",
         "liveLink": "#",
@@ -71,8 +71,8 @@
         "title": "Smart Food",
         "details": "An iOS mobile app to manage food in the fridge. Users can view, add, edit, and delete food items and enable/disable expiry notifications. The app helps reduce food waste by keeping track of expiration dates.",
         "images": [
-            "/images/smartfood-1.png",
-            "/images/smartfood-2.png"
+            "",
+            ""
         ],
         "repoLink": "",
         "liveLink": "",

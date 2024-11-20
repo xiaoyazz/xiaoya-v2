@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaHome } from "react-icons/fa";
 import { FaRegFolder } from "react-icons/fa";
-import projectOverview from "../data/projectOverview.json";
+import projectDetails from "../data/projectDetails.json";
 
 const ProjectsPage = () => {
 
@@ -12,13 +12,13 @@ const ProjectsPage = () => {
     }, []);
 
     // Sort the projects in descending order by id
-    const sortedProjects = [...projectOverview].sort((a, b) => b.id - a.id);
+    const sortedProjects = [...projectDetails].sort((a, b) => b.id - a.id);
 
     return (
-        <div className="max-w-4xl mx-auto mt-48 px-4 text-left">
+        <div className="max-w-4xl mx-auto mt-28 px-4 text-left">
 
             {/* Breadcrumb */}
-            <nav className="flex items-center mb-6 pb-6 text-sm text-gray-600 dark:text-gray-400">
+            <nav className="flex items-center mb-6 pb-2 text-sm dark:text-gray-400">
                 <Link
                     to="/"
                     className="flex items-center gap-1 hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
@@ -56,7 +56,7 @@ const ProjectsPage = () => {
                                 textOverflow: "ellipsis",
                             }}
                         >
-                            {project.description}
+                            {project.details}
                         </p>
 
                         {/* Tags */}
