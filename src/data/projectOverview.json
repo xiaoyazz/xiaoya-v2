@@ -1,0 +1,42 @@
+[
+    {
+        "id": 1,
+        "title": "My Weather",
+        "description": "Provide location, weather, humidity, wind, pressure, and a 5-day weather forecast. Integrated with Location API and Weather API.",
+        "image": "WeatherApp",
+        "liveLink": "https://xiaoyazz.github.io/Weather-Application/",
+        "repoLink": "https://github.com/xiaoyazz/Weather-Application?tab=readme-ov-file"
+    },
+    {
+        "id": 2,
+        "title": "My Quiz App",
+        "description": "Allow user to take quizzes with the multiple categories. Developped with JavaScript, HTML, CSS, and open quiz API",
+        "image": "QuizApp",
+        "liveLink": "https://xiaoyazz.github.io/Quiz/",
+        "repoLink": "https://github.com/xiaoyazz/Quiz"
+    },
+    {
+        "id": 3,
+        "title": "Feedback",
+        "description": "A React web app to collect user feedback and service ratings. Use JSON server as backend.",
+        "image": "Feedback",
+        "liveLink": "#",
+        "repoLink": "#"
+    },
+    {
+        "id": 4,
+        "title": "Workout G.E.M.",
+        "description": "An Android mobile app designed to support individuals in their fitness by tracking their workout.",
+        "image": "GEM",
+        "liveLink": "#",
+        "repoLink": "#"
+    },
+    {
+        "id": 5,
+        "title": "Smart Food",
+        "description": "An iOS mobile app allowing users to manage food in their fridge. Users can view, add, edit, and delete food item, and enable/disable expiry notification.",
+        "image": "SmartFood",
+        "liveLink": "",
+        "repoLink": ""
+    }
+]
