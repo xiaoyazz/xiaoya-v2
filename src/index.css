@@ -6,8 +6,12 @@
 
 body {
 
-  background: url('./assets/bg-texture2.jpg') repeat;
-  background-size: 300px 235px;
+  /* background: url('./assets/bg-texture.jpg') repeat;
+  background-size: 300px 235px; */
+  background-color: #faf2f2;
+  /* opacity: 0.9; */
+  background-image: radial-gradient(#cf8cb2 1.05px, #faf2f2 1.05px);
+  background-size: 21px 21px;
   color: #31383f;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
