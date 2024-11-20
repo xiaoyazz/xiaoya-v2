@@ -76,7 +76,7 @@ const ProjectDetailsPage = () => {
                         rel="noopener noreferrer"
                         className="underline hover:text-[#9c505a]"
                     >
-                        Find it on my Github
+                        {project.repoLink}
                     </a>
                 </div>
             </div>
