@@ -5,7 +5,7 @@ import Deco0 from '../assets/deco0.png'
 
 const LandingPage = () => {
     return (
-        <div className="text-left mt-48 px-4 max-w-4xl mx-auto relative">
+        <div className="text-left mt-40 px-4 max-w-4xl mx-auto relative">
             {/* Fixed Blurred Background */}
             {/* <div
                 className="fixed inset-0 bg-indigo-700 blur-[700px] z-[-1]"
