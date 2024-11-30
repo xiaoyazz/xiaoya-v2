@@ -3,7 +3,7 @@ import { FaAngleRight } from 'react-icons/fa';
 const AboutSection = () => {
     return (
 
-        <div className="text-left mt-10 mb-16 pt-8 pb-8 px-5 max-w-4xl mx-auto shadow-md rounded-md bg-[#f0d5dd] bg-opacity-100 dark:bg-opacity-5 dark:shadow-gray-950">
+        <div className="text-left mt-10 mb-16 pt-8 pb-8 px-10 max-w-4xl mx-auto shadow-md rounded-md bg-[#d6c1cb] bg-opacity-50 dark:bg-[#4b4b4b] dark:bg-opacity-50 dark:shadow-gray-950">
             <h2 className="text-2xl font-bold mb-4 dark:text-[#3bba9c]">About me</h2>
             <p className="mb-8">
                 I am currently a third-year Computer Science student.

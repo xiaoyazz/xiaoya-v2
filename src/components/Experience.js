@@ -29,7 +29,7 @@ const Experience = () => {
     ];
 
     return (
-        <div className="relative max-w-4xl mx-auto mt-20 pt-8 mb-10 pb-8 px-6 text-left shadow-md rounded-md bg-white bg-opacity-100  dark:bg-opacity-5 dark:shadow-gray-950">
+        <div className="text-left mt-10 mb-16 pt-8 pb-8 px-10 max-w-4xl mx-auto shadow-md rounded-md bg-white bg-opacity-50 dark:bg-[#4b4b4b] dark:bg-opacity-50 dark:shadow-gray-950">
 
             {/* <div className="absolute -top-25 right-[-15%] rotate-[10deg] transform translate-x-1/6 z-[-0.5]">
                 <img
@@ -41,7 +41,7 @@ const Experience = () => {
 
 
             {/* Top heading */}
-            <h2 className="text-2xl font-bold mt-4 mb-6 dark:text-[#3bba9c]">Experience</h2>
+            <h2 className="text-2xl font-bold mb-6 dark:text-[#3bba9c]">Experience</h2>
 
             {/* Experience list */}
             <div className="space-y-8">

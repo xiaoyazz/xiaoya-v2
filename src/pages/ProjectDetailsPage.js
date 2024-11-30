@@ -42,7 +42,7 @@ const ProjectDetailsPage = () => {
                 <span>{project.title}</span>
             </nav>
 
-            <div className="relative max-w-4xl mx-auto mt-2 pt-8 mb-10 pb-8 px-6 text-left shadow-md rounded-md bg-white bg-opacity-100  dark:bg-opacity-5 dark:shadow-gray-950">
+            <div className="relative max-w-4xl mx-auto mt-2 pt-8 mb-10 pb-8 px-6 text-left shadow-md rounded-md bg-white bg-opacity-100 dark:bg-[#4b4b4b] dark:bg-opacity-50 dark:shadow-gray-950">
 
                 <h1 className="text-2xl font-bold mb-4">{project.title}</h1>
 

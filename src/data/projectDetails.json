@@ -2,7 +2,8 @@
     {
         "id": 1,
         "title": "My Weather",
-        "details": "• Display weather in different cities.\n• Provides location, weather, humidity, wind, pressure, and a 5-day weather forecast.\n• Responsive on different devices.\n• Developed with HTML, CSS, and JavaScript.\n• Weather API: https://openweathermap.org/api\n• Location API: https://openweathermap.org/api/geocoding-api",
+        "details": "A web app to display weather forecast in user's location. Use Open Weather API and Location API.",
+        "features": "• Display weather in different cities.\n• Provides location, weather, humidity, wind, pressure, and a 5-day weather forecast.\n• Responsive on different devices.\n• Developed with HTML, CSS, and JavaScript.\n• Weather API: https://openweathermap.org/api\n• Location API: https://openweathermap.org/api/geocoding-api",
         "images": [
             "weather1.jpeg",
             ""
