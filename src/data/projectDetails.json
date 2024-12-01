@@ -2,7 +2,7 @@
     {
         "id": 1,
         "title": "My Weather",
-        "details": "A web app to display weather forecast in user's location. Use Open Weather API and Location API.",
+        "overview": "My Weather App is a web application that provides users with real-time weather forecasts based on their current location. It fetches and displays detailed weather data, including temperature, humidity, wind speed, and a 5-day forecast from the Open Weather API and Location API,.",
         "features": "• Display weather in different cities.\n• Provides location, weather, humidity, wind, pressure, and a 5-day weather forecast.\n• Responsive on different devices.\n• Developed with HTML, CSS, and JavaScript.\n• Weather API: https://openweathermap.org/api\n• Location API: https://openweathermap.org/api/geocoding-api",
         "images": [
             "weather1.jpeg",
@@ -20,9 +20,9 @@
     {
         "id": 2,
         "title": "My Quiz App",
-        "details": "A quiz application that allows users to take quizzes in multiple categories. Built with JavaScript, HTML, and CSS, and integrated with the Open Quiz API to fetch dynamic questions.",
+        "overview": "The Quiz App is a fun and interactive web application that lets users take quizzes across multiple categories. Built using JavaScript, HTML, and CSS, the app offers a dynamic experience by fetching questions in real time through the Open Quiz API. Users can test their knowledge on a variety of topics while enjoying a clean and responsive interface.",
         "images": [
-            "",
+            "quiz.jpeg",
             ""
         ],
         "repoLink": "https://github.com/xiaoyazz/Quiz",
@@ -36,13 +36,13 @@
     {
         "id": 3,
         "title": "Feedback",
-        "details": "A React web application for collecting user feedback and service ratings. It uses JSON Server as a mock backend to store and retrieve feedback data.",
+        "overview": "The Feedback App is a React-based web application designed to make it easy for users to provide feedback and rate services. With its simple and user-friendly interface, the app allows users to share their thoughts, rate experiences, and contribute valuable insights. This makes it a practical tool for collecting feedback in a structured and efficient way.\nThe app uses JSON Server as a mock backend to store and retrieve feedback data. This setup allows for quick testing and development.",
         "images": [
-            "",
+            "feedbackApp.png",
             ""
         ],
-        "repoLink": "#",
-        "liveLink": "#",
+        "repoLink": "https://github.com/xiaoyazz/feedback-app",
+        "liveLink": "",
         "tags": [
             "React",
             "JSON Server",
@@ -53,13 +53,13 @@
     {
         "id": 4,
         "title": "Workout G.E.M.",
-        "details": "An Android application designed to support users in their fitness journey by tracking workouts, offering activity insights, and setting fitness goals.",
+        "overview": "The Workout G.E.M. App is an Android application designed to help users stay on top of their fitness goals by making it easier to track workouts, set goals, and monitor progress. Whether you’re just starting your fitness journey or you’re a seasoned athlete, the app provides a simple and intuitive way to log exercises and keep track of your daily activity. It also offers insights into your workout habits, helping you stay motivated and make informed decisions to improve your fitness routine.",
         "images": [
-            "",
+            "GEM.png",
             ""
         ],
-        "repoLink": "#",
-        "liveLink": "#",
+        "repoLink": "https://github.com/xiaoyazz/workout-app",
+        "liveLink": "",
         "tags": [
             "Android",
             "Mobile App",
@@ -69,13 +69,30 @@
     },
     {
         "id": 5,
-        "title": "Smart Food",
-        "details": "An iOS mobile app to manage food in the fridge. Users can view, add, edit, and delete food items and enable/disable expiry notifications. The app helps reduce food waste by keeping track of expiration dates.",
+        "title": "Wi-Fi Scanner",
+        "overview": "WiFi Scanner enables users to scan and retrieve information about available WiFi access points (APs) in the vicinity. It includes functionality to store scanned data locally using the Room database, ensuring efficient and structured storage on the device.\n The app also supports saving data to Firebase, providing cloud-based storage and real-time synchronization. This feature allows for seamless data management across multiple devices and enhances accessibility. The Firebase integration is the latest update to the app, enabling expanded use cases for network analysis and data sharing.",
         "images": [
             "",
             ""
         ],
-        "repoLink": "",
+        "repoLink": "https://github.com/xiaoyazz/wifi-scanning-app",
+        "liveLink": "",
+        "tags": [
+            "Android",
+            "Mobile App",
+            "Wi-Fi"
+        ],
+        "date": "February 1, 2024"
+    },
+    {
+        "id": 6,
+        "title": "Smart Food",
+        "overview": "The Smart Food App is a user-friendly iOS mobile application designed to help users efficiently manage their food inventory in the fridge. The app allows users to view, add, edit, and delete food items with ease. It features expiry notifications that users can enable or disable, providing timely reminders to prevent food waste.\nThe app uses Firebase as its backend database to securely store and manage user data.",
+        "images": [
+            "SmartFood.png",
+            ""
+        ],
+        "repoLink": "https://github.com/xiaoyazz/Smart-Food",
         "liveLink": "",
         "tags": [
             "iOS",

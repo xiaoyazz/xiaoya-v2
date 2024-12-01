@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { BsSunFill } from 'react-icons/bs';
-import { BsMoonStarsFill } from "react-icons/bs";
+import { BsMoonFill } from "react-icons/bs";
 
 
 const DarkModeToggle = () => {
@@ -25,7 +25,7 @@ const DarkModeToggle = () => {
             {darkMode ? (
                 <BsSunFill className="text-xl dark:hover:text-[#3bba9c]" />
             ) : (
-                <BsMoonStarsFill className="text-xl hover:text-[#9c505a]" />
+                <BsMoonFill className="text-xl hover:text-[#9c505a]" />
             )}
         </button>
     );

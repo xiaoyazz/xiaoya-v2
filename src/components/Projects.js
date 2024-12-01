@@ -22,7 +22,7 @@ const Projects = () => {
                     .map((project) => (
                         <div
                             key={project.id}
-                            className="relative shadow-md rounded-md bg-[#f7f7ed] bg-opacity-90 hover:bg-opacity-100 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col dark:bg-white dark:bg-opacity-5 dark:hover:bg-opacity-10 dark:shadow-gray-950"
+                            className="relative shadow-md rounded-md bg-[#f7f7ed] bg-opacity-90 hover:bg-opacity-100 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col dark:bg-white dark:bg-opacity-10 dark:hover:bg-opacity-15 dark:shadow-gray-950"
                         >
                             {/* Image */}
                             <img

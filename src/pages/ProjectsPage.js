@@ -26,7 +26,7 @@ const ProjectsPage = () => {
                     <FaHome /> Home
                 </Link>
                 <span className="mx-2">/</span>
-                <span>Projects</span>
+                <span className="font-bold text-[#9c505a] dark:text-[#3bba9c]">Projects</span>
             </nav>
 
             {/* Projects Section */}
@@ -35,7 +35,7 @@ const ProjectsPage = () => {
                 {sortedProjects.map((project, index) => (
                     <div
                         key={index}
-                        className="relative shadow-md rounded-md bg-white bg-opacity-80 hover:bg-opacity-95 hover:shadow-lg p-4 transform transition duration-300 hover:-translate-y-2 flex flex-col dark:bg-opacity-5 dark:shadow-gray-900"
+                        className="relative shadow-sm rounded-md bg-white bg-opacity-80 hover:bg-opacity-95 hover:shadow-lg p-4 flex flex-col dark:bg-[#4b4b4b] dark:bg-opacity-50 dark:shadow-gray-900 dark:hover:shadow-md"
                     >
                         {/* Icon */}
                         <div className="flex items-center mb-4">
@@ -56,7 +56,7 @@ const ProjectsPage = () => {
                                 textOverflow: "ellipsis",
                             }}
                         >
-                            {project.details}
+                            {project.overview}
                         </p>
 
                         {/* Tags */}
@@ -75,7 +75,7 @@ const ProjectsPage = () => {
                         <div className="flex justify-between items-center mt-4 mb-4">
                             <Link
                                 to={`/projects/${project.id}`}
-                                className="text-sm font-semibold underline hover:text-[#9c505a]"
+                                className="text-sm font-semibold underline hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
                             >
                                 Read More
                             </Link>
@@ -85,15 +85,24 @@ const ProjectsPage = () => {
             </div>
 
             {/* More Projects Link */}
-            <p className="mt-12 px-1">
+            <p className="mt-12 px-1 text-center">
                 <a
                     href="https://github.com/xiaoyazz"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="hover:text-[#9c505a] transition-colors font-bold underline dark:hover:text-[#3bba9c]"
                 >
-                    More Projects on Github
+                    See More Projects on Github
                 </a>
+            </p>
+
+            <p className="mt-6 px-1 text-center">
+                <Link
+                    to={`/`}
+                    className="font-bold underline hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
+                >
+                    Back To Home
+                </Link>
             </p>
 
             <hr className="border-t my-4 mt-8" />

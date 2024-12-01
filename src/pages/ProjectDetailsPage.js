@@ -39,7 +39,7 @@ const ProjectDetailsPage = () => {
                     Projects
                 </Link>
                 <span className="mx-2">/</span>
-                <span>{project.title}</span>
+                <span className="font-bold text-[#9c505a] dark:text-[#3bba9c]">{project.title}</span>
             </nav>
 
             <div className="relative max-w-4xl mx-auto mt-2 pt-8 mb-10 pb-8 px-6 text-left shadow-md rounded-md bg-white bg-opacity-100 dark:bg-[#4b4b4b] dark:bg-opacity-50 dark:shadow-gray-950">
@@ -59,15 +59,19 @@ const ProjectDetailsPage = () => {
 
                 <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2">
-                        <span>Try it out 👉</span>
-                        <a
-                            href={project.liveLink}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="underline hover:text-[#9c505a]"
-                        >
-                            {project.liveLink}
-                        </a>
+                        {project.liveLink && ( // Render only if liveLink is not empty
+                            <>
+                                <span>Try it out 👉</span>
+                                <a
+                                    href={project.liveLink}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="underline hover:text-[#9c505a]"
+                                >
+                                    {project.liveLink}
+                                </a>
+                            </>
+                        )}
                     </div>
 
                     {/* Git Repo */}
@@ -84,9 +88,9 @@ const ProjectDetailsPage = () => {
                     </div>
                 </div>
 
-                <div className="text-xl font-semibold mt-12 mb-2">Key Feature & Highlights</div>
+                {/* <div className="text-xl font-semibold mt-10 mb-2">Overview</div>
                 <p className="mb-4 mt-2">
-                    {project.details.split('\n').map((line, index) => (
+                    {project.overview.split('\n').map((line, index) => (
                         <p key={index} className="mb-2">{line}</p>
                     ))}</p>
                 <div className="flex gap-2 mb-4">
@@ -100,18 +104,42 @@ const ProjectDetailsPage = () => {
                                 className="w-full md:w-1/2 rounded-md shadow-md"
                             />
                         ))}
+                </div> */}
+                <div className="text-xl font-semibold mt-10 mb-2">Overview</div>
+                <div className="mb-4 mt-2 max-w-4xl mx-auto">
+                    {/* Overview */}
+                    <p>
+                        {project.overview.split("\n").map((line, index) => (
+                            <p key={index} className="mb-2">{line}</p>
+                        ))}
+                    </p>
+
+                    {/* Images */}
+                    <div className="flex flex-wrap gap-2 mt-4">
+                        {project.images
+                            .filter((image) => image.trim() !== "")
+                            .map((image, index) => (
+                                <img
+                                    key={index}
+                                    src={require(`../assets/${image}`)}
+                                    alt={`${project.title} screenshot ${index + 1}`}
+                                    className="w-full rounded-md shadow-md"
+                                />
+                            ))}
+                    </div>
+                </div>
+
+
+                <div className="flex justify-between items-center mt-4 mb-4">
+                    <Link
+                        to={`/projects`}
+                        className="font-semibold underline hover:text-[#9c505a] dark:hover:text-[#3bba9c] "
+                    >
+                        Back To Projects
+                    </Link>
                 </div>
             </div>
 
-
-
-
-            {/* <Link
-                to="/projects"
-                className="text-sm font-semibold text-blue-500 underline hover:text-blue-700 mt-6 block"
-            >
-                Back to Projects
-            </Link> */}
         </div>
     );
 };
