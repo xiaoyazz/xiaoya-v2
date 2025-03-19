@@ -17,7 +17,7 @@ const Navbar = () => {
                         </Link>
                         <div className="flex space-x-3">
                             <a
-                                href="https://www.linkedin.com/in/your-linkedin-profile"
+                                href="https://www.linkedin.com/in/xiaoyazou/"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
@@ -25,7 +25,7 @@ const Navbar = () => {
                                 <FaLinkedin size={20} />
                             </a>
                             <a
-                                href="https://github.com/your-github-profile"
+                                href="https://github.com/xiaoyazz"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
