@@ -15,19 +15,19 @@ const AboutSection = () => {
                 <h3 className="text-lg font-semibold mb-2">Here are some technologies I have been working with:</h3>
                 <ul className="grid grid-cols-2 gap-4">
                     {[
-                        "iOS in Swift",
-                        "Android in Kotlin",
+                        "iOS Development / Swift / Objective-C",
+                        "Android Development / Kotlin",
                         "TypeScript",
-                        "React & Angular",
+                        "Node.js & React & Angular",
                         "JavaScript ES6+",
-                        "Python & Jupyter Notebook",
-                        "Java",
+                        "Machine Learning & EDA",
+                        "Java & SpringBoot",
                         "C# & .NET",
                         "C & C++",
                         "Firebase",
                         "MongoDB",
-                        "SQL",
-                        "AWS & Azure & IBM Cloud",
+                        "SQL & NoSql & MySql",
+                        "AWS & Azure & IBM Cloud & Render",
                         "Git",
                     ].map((tech, index) => (
                         <li
