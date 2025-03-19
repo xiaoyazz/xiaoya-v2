@@ -13,7 +13,7 @@ function App() {
     <div className="App">
       <Navbar />
       <Routes>
-        <Route path="/xiaoya-v2" element={<HomePage />} />
+        <Route path="/" element={<HomePage />} />
         {/* <Route path="/about" element={<About />} />
         <Route path="/experience" element={<Experience />} /> */}
         <Route path="/projects" element={<ProjectsPage />} />
