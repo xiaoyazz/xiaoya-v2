@@ -69,23 +69,6 @@
     },
     {
         "id": 5,
-        "title": "Wi-Fi Scanner",
-        "overview": "WiFi Scanner enables users to scan and retrieve information about available WiFi access points (APs) in the vicinity. It includes functionality to store scanned data locally using the Room database, ensuring efficient and structured storage on the device.\n The app also supports saving data to Firebase, providing cloud-based storage and real-time synchronization. This feature allows for seamless data management across multiple devices and enhances accessibility. The Firebase integration is the latest update to the app, enabling expanded use cases for network analysis and data sharing.",
-        "images": [
-            "",
-            ""
-        ],
-        "repoLink": "https://github.com/xiaoyazz/wifi-scanning-app",
-        "liveLink": "",
-        "tags": [
-            "Android",
-            "Mobile App",
-            "Wi-Fi"
-        ],
-        "date": "February 1, 2024"
-    },
-    {
-        "id": 6,
         "title": "Smart Food",
         "overview": "The Smart Food App is a user-friendly iOS mobile application designed to help users efficiently manage their food inventory in the fridge. The app allows users to view, add, edit, and delete food items with ease. It features expiry notifications that users can enable or disable, providing timely reminders to prevent food waste.\nThe app uses Firebase as its backend database to securely store and manage user data.",
         "images": [
@@ -100,5 +83,25 @@
             "Food Management"
         ],
         "date": "February 1, 2024"
+    },
+    {
+        "id": 6,
+        "title": "Library",
+        "overview": "An iOS app to view, add, update, and delete books from a library. The app is integrated MongoDB with a Node.js REST API and deployed on Render. It manages data from both local MongoDB compass and MongoDB Atlas cloud.",
+        "images": [
+            "Library.png",
+            "Library2.png",
+            "Library3.png"
+        ],
+        "repoLink": "https://github.com/xiaoyazz/Assignment2.1_XiaoyaZou",
+        "liveLink": "",
+        "tags": [
+            "iOS",
+            "Mobile App",
+            "RESTful API",
+            "MongoDB",
+            "Cloud"
+        ],
+        "date": "March 19, 2025"
     }
 ]
