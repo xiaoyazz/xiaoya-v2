@@ -9,17 +9,17 @@
     },
     {
         "id": 5,
-        "title": "Wi-Fi Scanner",
-        "description": "WiFi Scanner enables users to scan and retrieve information about available WiFi access points (APs) in the vicinity. It includes functionality to store scanned data locally using the Room database, ensuring efficient and structured storage on the device. The app also supports saving data to Firebase, providing cloud-based storage and real-time synchronization. This feature allows for seamless data management across multiple devices and enhances accessibility. The Firebase integration is the latest update to the app, enabling expanded use cases for network analysis and data sharing.",
+        "title": "Smart Food",
+        "description": "An iOS mobile app allowing users to manage food in their fridge. Users can view, add, edit, and delete food item, and enable/disable expiry notification.",
         "image": "SmartFood.png",
         "liveLink": "",
         "repoLink": ""
     },
     {
         "id": 6,
-        "title": "Smart Food",
-        "description": "An iOS mobile app allowing users to manage food in their fridge. Users can view, add, edit, and delete food item, and enable/disable expiry notification.",
-        "image": "SmartFood.png",
+        "title": "Library",
+        "description": "An iOS app to view, add, update, and delete books from a library. The app is integrated MongoDB with a Node.js REST API and deployed on Render. It manages data from both local MongoDB compass and MongoDB Atlas cloud.",
+        "image": "Library.png",
         "liveLink": "",
         "repoLink": ""
     }
