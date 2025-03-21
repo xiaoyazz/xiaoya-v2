@@ -87,7 +87,7 @@
     {
         "id": 6,
         "title": "Library",
-        "overview": "An iOS app to view, add, update, and delete books from a library. The app is integrated MongoDB with a Node.js REST API and deployed on Render. It manages data from both local MongoDB compass and MongoDB Atlas cloud.",
+        "overview": "An iOS app to view, add, update, and delete books from a library. The back-end is a Node.js app with REST API and deployed on Render. It manages data from both local MongoDB local database and MongoDB Atlas cloud.",
         "images": [
             "Library.png",
             "Library2.png",
