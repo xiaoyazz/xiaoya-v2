@@ -1,13 +1,5 @@
 [
     {
-        "id": 4,
-        "title": "Workout G.E.M.",
-        "description": "An Android mobile app designed to support individuals in their fitness by tracking their workout.",
-        "image": "GEM.png",
-        "liveLink": "#",
-        "repoLink": "#"
-    },
-    {
         "id": 5,
         "title": "Smart Food",
         "description": "An iOS mobile app allowing users to manage food in their fridge. Users can view, add, edit, and delete food item, and enable/disable expiry notification.",
