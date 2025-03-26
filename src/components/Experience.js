@@ -9,10 +9,11 @@ const Experience = () => {
             company: "Sheridan College Centre for Applied AI (CAAI)",
             title: "Application Developer",
             location: "Oakville, Ontario, Canada",
-            date: "May 2023 - Dec 2023 (Contract)",
+            date: "May 2023 - Dec 2023 (Co-op)",
             details: [
                 "Developed an Android app with Firebase to collect Wi-Fi APs in the college.",
                 "Developed Machine Learning models for Telus to implement a 3-D indoor location system.",
+                "Completed data analysis and visualization for Wi-Fi Access Point data.",
                 "Refined the accuracy and precision of the new system."
             ]
         },
@@ -23,7 +24,8 @@ const Experience = () => {
             date: "Jan 2022 - Sep 2022 (Co-op)",
             details: [
                 "Created and maintained projects using technologies such as C#, ASP.NET Core MVC, and Entity Framework.",
-                "Worked with ASP.NET Core Blazor Server, AJAX, jQuery, HTML, and CSS."
+                "Worked with ASP.NET Core Blazor Server, AJAX, jQuery, HTML, and CSS.",
+                "Delivered low-code solutions for clients with Microsoft PowerPlatform."
             ]
         },
     ];

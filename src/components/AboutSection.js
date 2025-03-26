@@ -17,6 +17,7 @@ const AboutSection = () => {
                     {[
                         "iOS Development / Swift / Objective-C",
                         "Android Development / Kotlin",
+                        "Unity",
                         "TypeScript",
                         "Node.js & React & Angular",
                         "JavaScript ES6+",
