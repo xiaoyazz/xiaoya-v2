@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/xiaoya-v2/static/css/main.30c30ab3.css",
-    "main.js": "/xiaoya-v2/static/js/main.1082e620.js",
+    "main.js": "/xiaoya-v2/static/js/main.5ebb5323.js",
     "static/js/453.a2d87570.chunk.js": "/xiaoya-v2/static/js/453.a2d87570.chunk.js",
     "static/media/bg-texture2.jpg": "/xiaoya-v2/static/media/bg-texture2.203902a7f0eddf5ca369.jpg",
     "static/media/WeatherApp.png": "/xiaoya-v2/static/media/WeatherApp.a1a8226bf403c3eebab7.png",
@@ -11,6 +11,7 @@
     "static/media/SmartFood.png": "/xiaoya-v2/static/media/SmartFood.7e99fd92e5baa6424b5f.png",
     "static/media/deco0.png": "/xiaoya-v2/static/media/deco0.90b4203d96827c8e0932.png",
     "static/media/3dobj.png": "/xiaoya-v2/static/media/3dobj.2cdd4fff18759e7f88ff.png",
+    "static/media/RollBall.png": "/xiaoya-v2/static/media/RollBall.be939e51e563e8ed5d43.png",
     "static/media/Library1.png": "/xiaoya-v2/static/media/Library1.de435e03b6a2660168fa.png",
     "static/media/feedbackApp.png": "/xiaoya-v2/static/media/feedbackApp.b3d262c47b370dfd0ac2.png",
     "static/media/shapes.png": "/xiaoya-v2/static/media/shapes.715f0a2c6d4c7c3d4abe.png",
@@ -32,11 +33,11 @@
     "static/media/nds.png": "/xiaoya-v2/static/media/nds.a71702e29b938ee42005.png",
     "index.html": "/xiaoya-v2/index.html",
     "main.30c30ab3.css.map": "/xiaoya-v2/static/css/main.30c30ab3.css.map",
-    "main.1082e620.js.map": "/xiaoya-v2/static/js/main.1082e620.js.map",
+    "main.5ebb5323.js.map": "/xiaoya-v2/static/js/main.5ebb5323.js.map",
     "453.a2d87570.chunk.js.map": "/xiaoya-v2/static/js/453.a2d87570.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.30c30ab3.css",
-    "static/js/main.1082e620.js"
+    "static/js/main.5ebb5323.js"
   ]
 }
