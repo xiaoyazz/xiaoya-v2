@@ -6,6 +6,18 @@ import moonStar from "../assets/deco3.png"
 const Experience = () => {
     const experiences = [
         {
+            company: "Infostructure Technology Inc",
+            title: "Application Developer",
+            location: "Brampton, Ontario, Canada",
+            date: "May 2025 - Aug 2023 (Internship)",
+            details: [
+                "Developed and optimized backend services and RESTful APIs for childcare management systems, using C# and .NET.",
+                "Built responsive user interfaces with Bootstrap, JavaScript, Razor, Ajax, and jQuery",
+                "Managed data using SQL and LINQ with Azure SQL.",
+                "Implemented CI/CD pipelines with Azure DevOps for cloud-based applications."
+            ]
+        },
+        {
             company: "Sheridan College Centre for Applied AI (CAAI)",
             title: "Application Developer",
             location: "Oakville, Ontario, Canada",
