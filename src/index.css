@@ -3,11 +3,7 @@
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap');
 
-
 body {
-
-  /* background: url('./assets/bg-texture.jpg') repeat;
-  background-size: 300px 235px; */
   background-color: #eeeeee;
   opacity: 1;
   background-image: radial-gradient(#e3c5c5 1.3px, transparent 1.3px), radial-gradient(#e3c5c5 1.3px, #eeeeee 1.3px);
@@ -20,40 +16,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* background: linear-gradient(135deg, #f3f4f6, #e0e7ff);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center; */
-
 }
 
-/* .deco1 {
-  @apply absolute top-1/2 right-0 transform -translate-y-1/2;
-}
-
-.deco2 {
-  @apply absolute top-1/2 left-0 transform -translate-y-1/2;
-} */
-
-
-
-/* Dark mode styles */
 .dark body {
-  /* bg-[#0d1829];*/
   @apply text-[#BCC4D4];
   background-color: #272727;
   opacity: 1;
-  background-image: radial-gradient(#186053 1.2000000000000002px, transparent 1.2000000000000002px), radial-gradient(#186053 1.2000000000000002px, #272727 1.2000000000000002px);
+  background-image: radial-gradient(#186053 1.2px, transparent 1.2px), radial-gradient(#186053 1.2px, #272727 1.2px);
   background-size: 48px 48px;
   background-position: 0 0, 24px 24px;
-  /* Dark mode background and text color */
 }
-
-/* .high-light {
-  color: #9c505a;
-} */
 
 .site-name {
   font-family: "IBM Plex Mono", serif;
@@ -72,21 +44,277 @@ body {
   border-radius: 10px;
 }
 
-
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
-/* Initially hide elements */
 .fade-in-section {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
-/* When visible, fade in and slide up */
 .fade-in-section.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* -------------------------------------------------------------------------- */
+/* Scroll-reactive card lighting                                               */
+/*                                                                            */
+/* Inspired by CSS view-timeline demos: the effect follows each card's        */
+/* position in the viewport instead of playing on a fixed timer.              */
+/*                                                                            */
+/* Tuning:                                                                     */
+/* - .scroll-reactive-surface = subtle effect for large homepage sections     */
+/* - .scroll-reactive-card    = slightly stronger effect for project cards    */
+/* -------------------------------------------------------------------------- */
+
+@property --scroll-gleam-x {
+  syntax: '<percentage>';
+  inherits: false;
+  initial-value: -120%;
+}
+
+@property --scroll-gleam-opacity {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+@property --scroll-edge-opacity {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+.scroll-reactive-surface,
+.scroll-reactive-card {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.scroll-reactive-surface > *,
+.scroll-reactive-card > * {
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-reactive-surface::before,
+.scroll-reactive-card::before {
+  content: '';
+  position: absolute;
+  inset: -20%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: var(--scroll-gleam-opacity);
+  transform: translateX(var(--scroll-gleam-x));
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.04) 40%,
+    rgba(255, 255, 255, 0.48) 50%,
+    rgba(255, 255, 255, 0.04) 60%,
+    transparent 70%
+  );
+  will-change: transform, opacity;
+}
+
+
+.scroll-reactive-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  border-radius: inherit;
+  box-shadow: inset 0 0 0 1px rgba(156, 80, 90, var(--scroll-edge-opacity));
+}
+
+.dark .scroll-reactive-card::after {
+  box-shadow: inset 0 0 0 1px rgba(59, 186, 156, var(--scroll-edge-opacity));
+}
+
+.dark .scroll-reactive-surface::before,
+.dark .scroll-reactive-card::before {
+  background: linear-gradient(
+    115deg,
+    transparent 30%,
+    rgba(59, 186, 156, 0.02) 40%,
+    rgba(59, 186, 156, 0.28) 50%,
+    rgba(59, 186, 156, 0.02) 60%,
+    transparent 70%
+  );
+}
+
+@supports (animation-timeline: view()) {
+  .scroll-reactive-surface {
+    animation: section-scroll-gleam linear both, section-scroll-depth linear both;
+    animation-timeline: view(block), view(block);
+    animation-range: entry 5% exit 95%, entry 10% exit 90%;
+  }
+
+  .scroll-reactive-card {
+    animation: card-scroll-gleam linear both, card-scroll-depth linear both;
+    animation-timeline: view(block), view(block);
+    animation-range: entry 0% exit 100%, entry 5% exit 95%;
+  }
+
+  @keyframes section-scroll-gleam {
+    0%, 100% {
+      --scroll-gleam-x: -120%;
+      --scroll-gleam-opacity: 0;
+    }
+
+    36% {
+      --scroll-gleam-opacity: 0.03;
+    }
+
+    50% {
+      --scroll-gleam-x: 0%;
+      --scroll-gleam-opacity: 0.12;
+    }
+
+    64% {
+      --scroll-gleam-x: 120%;
+      --scroll-gleam-opacity: 0.03;
+    }
+  }
+
+  @keyframes card-scroll-gleam {
+    0%, 100% {
+      --scroll-gleam-x: -125%;
+      --scroll-gleam-opacity: 0;
+    }
+
+    30% {
+      --scroll-gleam-opacity: 0.05;
+    }
+
+    50% {
+      --scroll-gleam-x: 0%;
+      --scroll-gleam-opacity: 0.2;
+    }
+
+    70% {
+      --scroll-gleam-x: 125%;
+      --scroll-gleam-opacity: 0.05;
+    }
+  }
+
+  @keyframes section-scroll-depth {
+    0%, 100% {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.08),
+        0 2px 4px -2px rgba(0, 0, 0, 0.06),
+        inset 0 0 0 1px rgba(156, 80, 90, 0);
+    }
+
+    50% {
+      box-shadow: 0 12px 28px -14px rgba(49, 56, 63, 0.28),
+        0 5px 12px -8px rgba(49, 56, 63, 0.18),
+        inset 0 0 0 1px rgba(156, 80, 90, 0.12);
+    }
+  }
+
+  @keyframes card-scroll-depth {
+    0%, 100% {
+      --scroll-edge-opacity: 0;
+      filter: drop-shadow(0 0 0 rgba(49, 56, 63, 0));
+    }
+
+    50% {
+      --scroll-edge-opacity: 0.18;
+      filter: drop-shadow(0 8px 12px rgba(49, 56, 63, 0.12));
+    }
+  }
+
+  .dark .scroll-reactive-surface,
+  .dark .scroll-reactive-card {
+    animation-name: dark-scroll-gleam, dark-scroll-depth;
+  }
+
+  .dark .scroll-reactive-card {
+    animation-name: dark-card-scroll-gleam, dark-card-scroll-depth;
+  }
+
+  @keyframes dark-scroll-gleam {
+    0%, 100% {
+      --scroll-gleam-x: -120%;
+      --scroll-gleam-opacity: 0;
+    }
+
+    36% {
+      --scroll-gleam-opacity: 0.03;
+    }
+
+    50% {
+      --scroll-gleam-x: 0%;
+      --scroll-gleam-opacity: 0.12;
+    }
+
+    64% {
+      --scroll-gleam-x: 120%;
+      --scroll-gleam-opacity: 0.03;
+    }
+  }
+
+  @keyframes dark-card-scroll-gleam {
+    0%, 100% {
+      --scroll-gleam-x: -125%;
+      --scroll-gleam-opacity: 0;
+    }
+
+    30% {
+      --scroll-gleam-opacity: 0.05;
+    }
+
+    50% {
+      --scroll-gleam-x: 0%;
+      --scroll-gleam-opacity: 0.18;
+    }
+
+    70% {
+      --scroll-gleam-x: 125%;
+      --scroll-gleam-opacity: 0.05;
+    }
+  }
+
+  @keyframes dark-scroll-depth {
+    0%, 100% {
+      box-shadow: 0 4px 9px -4px rgba(0, 0, 0, 0.28),
+        inset 0 0 0 1px rgba(59, 186, 156, 0);
+    }
+
+    50% {
+      box-shadow: 0 14px 30px -14px rgba(0, 0, 0, 0.66),
+        0 5px 14px -8px rgba(0, 0, 0, 0.5),
+        inset 0 0 0 1px rgba(59, 186, 156, 0.16);
+    }
+  }
+
+  @keyframes dark-card-scroll-depth {
+    0%, 100% {
+      --scroll-edge-opacity: 0;
+      filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+    }
+
+    50% {
+      --scroll-edge-opacity: 0.2;
+      filter: drop-shadow(0 9px 13px rgba(0, 0, 0, 0.28));
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reactive-surface,
+  .scroll-reactive-card {
+    animation: none !important;
+  }
+
+  .scroll-reactive-surface::before,
+  .scroll-reactive-card::before,
+  .scroll-reactive-card::after {
+    display: none;
+  }
 }
