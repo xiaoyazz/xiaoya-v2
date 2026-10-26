@@ -2,32 +2,19 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { siteConfig } from "../../data/siteData";
 
 const Footer = () => (
-  <footer className="w-full mt-4 py-6 mb-10">
-    <div className="max-w-4xl mx-auto text-center">
-      <div className="flex justify-center gap-4 mb-4">
-        <a
-          href={siteConfig.linkedin}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="LinkedIn"
-          className="hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
-        >
-          <FaLinkedin size={20} />
+  <footer className="site-main pt-6 pb-14 md:pb-20">
+    <div className="border-t border-black/10 dark:border-white/10 pt-7 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
+      <p className="text-xs text-black/45 dark:text-white/45">
+        Built and designed by {siteConfig.fullName}. © {new Date().getFullYear()}
+      </p>
+      <div className="flex items-center gap-4">
+        <a href={siteConfig.linkedin} target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="icon-hover">
+          <FaLinkedin size={18} />
         </a>
-        <a
-          href={siteConfig.github}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label="GitHub"
-          className="hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
-        >
-          <FaGithub size={20} />
+        <a href={siteConfig.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub" className="icon-hover">
+          <FaGithub size={18} />
         </a>
       </div>
-      <p className="text-sm">
-        Built and designed by {siteConfig.fullName}.<br />
-        All rights reserved. ©
-      </p>
     </div>
   </footer>
 );

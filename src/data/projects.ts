@@ -113,15 +113,15 @@ export const projects: Project[] = [
     id: 8,
     title: "LunaCare Doctor Portal",
     summary:
-      "A web-based portal for doctors to manage patient records and ML-based PPD predictions.",
+      "A React-based doctor portal for monitoring postpartum patients and reviewing health insights.",
     overview:
-      "A web application designed for doctors to efficiently manage patient records, ML-based PPD predictions and visualizations, and communicate with patients. Built with Machine Learning models and modern web technologies. Check out the backend and Machine Learning service repositories on my github for more details.",
+      "A fully deployed healthcare platform that lets providers review patient health and mood data, track trends, and view machine-learning-supported insights. Built with React, Firebase, GCP, and REST APIs. See more details about the LunaCare Backend and LunaCare ML Service repo on my github.",
     coverImage: lunaCare,
     images: [lunaCare],
-    liveLink: "https://newlunacare.web.app/",
     repoLink: "https://github.com/xiaoyazz/luna-doctor-portal",
-    tags: ["Web App", "JavaScript", "React", "Machine Learning"],
-    date: "October 25, 2026",
+    liveLink: "https://newlunacare.web.app/",
+    tags: ["Machine Learning", "React", "Firebase", "GCP", "REST APIs"],
+    date: "Oct 26, 2025",
     featured: true,
   },
 ];

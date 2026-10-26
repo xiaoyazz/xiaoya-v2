@@ -9,21 +9,17 @@ export const siteConfig = {
 
 export const about = {
   description:
-    "I am a Computer Science student graduating in December 2026. I'm passionate about full-stack development, mobile computing, and AI. Outside of school and work, I like camping, cycling, and snowboarding.",
+    "I am a Computer Science student graduating in December 2026. I'm passionate about full-stack development, mobile computing, and AI. Outside of school and work, I like camping, cycling, snowboarding, and video games.",
   technologies: [
-    "iOS Development / Swift / SwiftUI",
-    "Android Development / Kotlin",
-    "Python / Machine Learning / EDA/ LLMs / AI Agents",
+    "iOS & Android Development",
+    "Python",
     "LLMs / AI Agents / RAG",
-    "OOP / Java / Spring Boot",
+    "Java / Spring Boot",
     "C# / .NET",
-    "C / C++ / Assembly",
-    "Full-Stack Development / RESTful API / React",
-    "Node.js",
-    "JavaScript / TypeScript / Angular / HTML / CSS",
-    "Firebase / MongoDB / PostgreSQL / MS SQL Server",
+    "C / C++",
+    "TypeScript / React",
     "SQL / NoSQL / MySQL",
-    "Google Cloud / AWS / Azure / IBM Cloud",
+    "Google Cloud / AWS / Azure",
     "Git / Docker / CI/CD",
   ],
 };

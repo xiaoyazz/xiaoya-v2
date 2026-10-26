@@ -1,4 +1,4 @@
-import { FaHome } from "react-icons/fa";
+import { FaArrowLeft, FaExternalLinkAlt, FaGithub } from "react-icons/fa";
 import { Link, useParams } from "react-router-dom";
 import { projects } from "../data/projects";
 import useScrollToTop from "../hooks/useScrollToTop";
@@ -6,112 +6,62 @@ import useScrollToTop from "../hooks/useScrollToTop";
 const ProjectDetailsPage = () => {
   useScrollToTop();
   const { id } = useParams<{ id: string }>();
-  const projectId = Number(id);
-  const project = projects.find((item) => item.id === projectId);
+  const project = projects.find((item) => item.id === Number(id));
 
   if (!project) {
     return (
-      <div className="max-w-4xl mx-auto mt-28 px-4 text-left">
+      <main className="site-main page-top-space">
         <p>Project not found.</p>
-        <Link to="/projects" className="font-semibold underline hover:text-[#9c505a]">
-          Back To Projects
-        </Link>
-      </div>
+        <Link to="/projects" className="text-link mt-4 inline-block">Back to projects</Link>
+      </main>
     );
   }
 
   return (
-    <div className="max-w-4xl mx-auto mt-28 px-4 text-left">
-      <nav className="flex items-center mb-6 pb-6 text-sm dark:text-gray-400" aria-label="Breadcrumb">
-        <Link
-          to="/"
-          className="flex items-center gap-1 hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
-        >
-          <FaHome /> Home
-        </Link>
-        <span className="mx-2">/</span>
-        <Link
-          to="/projects"
-          className="flex items-center gap-1 hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
-        >
-          Projects
-        </Link>
-        <span className="mx-2">/</span>
-        <span className="font-bold text-[#9c505a] dark:text-[#3bba9c]">{project.title}</span>
-      </nav>
+    <main className="site-main page-top-space">
+      <Link to="/projects" className="text-link inline-flex items-center gap-2 text-sm mb-12">
+        <FaArrowLeft className="text-xs" /> projects
+      </Link>
 
-      <article className="relative max-w-4xl mx-auto mt-2 pt-8 mb-10 pb-8 px-6 text-left shadow-md rounded-md bg-white bg-opacity-100 dark:bg-[#4b4b4b] dark:bg-opacity-50 dark:shadow-gray-950">
-        <h1 className="text-2xl font-bold mb-4">{project.title}</h1>
+      <article className="max-w-3xl">
+        <p className="eyebrow mb-3">{project.date}</p>
+        <h1 className="text-4xl md:text-5xl font-semibold tracking-[-0.03em]">{project.title}</h1>
+        <p className="mt-6 text-lg leading-8 text-black/60 dark:text-white/60">{project.summary}</p>
 
-        <div className="flex flex-wrap gap-2 mb-4">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold py-1 px-2 rounded-full"
-            >
-              {tag}
-            </span>
-          ))}
+        <div className="flex flex-wrap gap-x-4 gap-y-2 mt-6 text-xs font-medium text-black/45 dark:text-white/45">
+          {project.tags.map((tag) => <span key={tag}>{tag}</span>)}
         </div>
 
-        <div className="flex flex-col gap-2">
+        <div className="flex items-center gap-5 mt-7">
+          <a href={project.repoLink} target="_blank" rel="noopener noreferrer" className="text-link inline-flex items-center gap-2">
+            GitHub <FaGithub />
+          </a>
           {project.liveLink && (
-            <div className="flex items-center gap-2">
-              <span>Try it out 👉</span>
-              <a
-                href={project.liveLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="underline hover:text-[#9c505a]"
-              >
-                {project.liveLink}
-              </a>
-            </div>
-          )}
-
-          <div className="flex items-center gap-2">
-            <span>Git Repo 👉</span>
-            <a
-              href={project.repoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline hover:text-[#9c505a]"
-            >
-              {project.repoLink}
+            <a href={project.liveLink} target="_blank" rel="noopener noreferrer" className="text-link inline-flex items-center gap-2">
+              live site <FaExternalLinkAlt className="text-xs" />
             </a>
-          </div>
+          )}
         </div>
 
-        <h2 className="text-xl font-semibold mt-10 mb-2">Overview</h2>
-        <div className="mb-4 mt-2 max-w-4xl mx-auto">
-          {project.overview.split("\n").map((line) => (
-            <p key={line} className="mb-2">
-              {line}
-            </p>
+        <div className="project-rule" />
+
+        <h2 className="text-2xl font-semibold mb-5">Overview</h2>
+        <div className="space-y-3 leading-8 text-black/70 dark:text-white/70">
+          {project.overview.split("\n").map((line) => <p key={line}>{line}</p>)}
+        </div>
+
+        <div className="space-y-6 mt-10">
+          {project.images.map((image, index) => (
+            <img
+              key={`${project.id}-${index}`}
+              src={image}
+              alt={`${project.title} screenshot ${index + 1}`}
+              className="w-full rounded-2xl border border-black/5 dark:border-white/10 shadow-sm"
+            />
           ))}
-
-          <div className="flex flex-wrap gap-2 mt-4">
-            {project.images.map((image, index) => (
-              <img
-                key={`${project.id}-${index}`}
-                src={image}
-                alt={`${project.title} screenshot ${index + 1}`}
-                className="w-full rounded-md shadow-md"
-              />
-            ))}
-          </div>
-        </div>
-
-        <div className="flex justify-between items-center mt-4 mb-4">
-          <Link
-            to="/projects"
-            className="font-semibold underline hover:text-[#9c505a] dark:hover:text-[#3bba9c]"
-          >
-            Back To Projects
-          </Link>
         </div>
       </article>
-    </div>
+    </main>
   );
 };
 

@@ -1,36 +1,59 @@
+import { useState } from "react";
 import { FaAngleRight } from "react-icons/fa";
 import { experiences } from "../../data/siteData";
-import SectionCard from "../ui/SectionCard";
+import FadeInSection from "../ui/FadeInSection";
+import SectionHeading from "../ui/SectionHeading";
 
-const ExperienceSection = () => (
-  <SectionCard tone="white">
-    <h2 className="text-2xl font-bold mb-6 dark:text-[#3bba9c]">Experience</h2>
+const ExperienceSection = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeExperience = experiences[activeIndex];
 
-    <div className="space-y-8">
-      {experiences.map((experience) => (
-        <article key={`${experience.company}-${experience.date}`}>
-          <h3 className="text-lg font-semibold">
-            {experience.title} @{" "}
-            <span className="dark:text-[#3bba9c]">{experience.company}</span>
-          </h3>
-          <p className="text-sm mb-4">
-            {experience.date} - {experience.location}
-          </p>
-          <ul className="space-y-2">
-            {experience.details.map((detail) => (
-              <li
-                key={detail}
-                className="flex items-center gap-2 cursor-crosshair transform transition duration-300 hover:-translate-y-1 hover:-translate-x-1 hover:text-[#9c505a] hover-text-shadow dark:hover:text-[#3bba9c]"
+  return (
+    <section id="experience" className="portfolio-section scroll-mt-24">
+      <FadeInSection>
+        <SectionHeading>experience</SectionHeading>
+      </FadeInSection>
+
+      <FadeInSection delay={70}>
+        <div className="experience-layout">
+          <div className="experience-tabs" role="tablist" aria-label="Work experience">
+            {experiences.map((experience, index) => (
+              <button
+                key={`${experience.company}-${experience.date}`}
+                type="button"
+                role="tab"
+                aria-selected={activeIndex === index}
+                onClick={() => setActiveIndex(index)}
+                className={`experience-tab text-hover ${activeIndex === index ? "is-active" : ""}`}
               >
-                <FaAngleRight className="shrink-0" />
-                <span>{detail}</span>
-              </li>
+                {experience.company.replace("Sheridan College Centre for Applied AI (CAAI) + TELUS", "CAAI + TELUS")}
+              </button>
             ))}
-          </ul>
-        </article>
-      ))}
-    </div>
-  </SectionCard>
-);
+          </div>
+
+          <article className="experience-panel" role="tabpanel">
+            <p className="eyebrow mb-2">{activeExperience.date}</p>
+            <h3 className="text-xl md:text-2xl font-semibold leading-snug">
+              {activeExperience.title}
+              <span className="accent-text"> @ {activeExperience.company}</span>
+            </h3>
+            <p className="text-sm mt-2 mb-7 text-black/50 dark:text-white/50">
+              {activeExperience.location}
+            </p>
+
+            <ul className="space-y-4">
+              {activeExperience.details.map((detail) => (
+                <li key={detail} className="experience-detail">
+                  <FaAngleRight className="text-[#c57f92] dark:text-[#3bba9c] shrink-0 mt-1" />
+                  <span>{detail}</span>
+                </li>
+              ))}
+            </ul>
+          </article>
+        </div>
+      </FadeInSection>
+    </section>
+  );
+};
 
 export default ExperienceSection;

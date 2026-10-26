@@ -1,19 +1,62 @@
+import { FaArrowDown } from "react-icons/fa";
 import villagerMe from "../../assets/villagerMe.png";
+import FadeInSection from "../ui/FadeInSection";
 
 const LandingSection = () => (
-  <div className="text-left mt-40 px-4 max-w-4xl mx-auto relative">
-    <img
-      src={villagerMe}
-      alt="Xiaoya's Avatar"
-      className="w-20 h-22 animate-bounce"
-    />
-    <h1 className="text-5xl font-bold mt-8">
-      Hi, I'm <span className="text-[#dd8ea4] dark:text-[#3bba9c]">Xiaoya</span>.
-    </h1>
-    <h3 className="text-2xl mt-4 font-bold">
-      I create, build, and explore technology.
-    </h3>
-  </div>
+  <section
+    id="home"
+    className="min-h-[82vh] flex items-center scroll-mt-24"
+  >
+    <div className="w-full grid md:grid-cols-[180px_minmax(0,1fr)] gap-8 md:gap-12 items-start">
+
+      {/* Avatar */}
+      <FadeInSection className="flex justify-center md:pt-16">
+        <div className="relative w-30 h-30 md:w-36 md:h-36">
+
+          {/* Pink square */}
+          <div className="absolute inset-0 rounded-3xl bg-[#efd2da] dark:bg-[#2f806d]/25" />
+
+          {/* Position avatar separately so bounce does not affect centering */}
+          <div className="absolute inset-0 flex items-center justify-center translate-y-3">
+            <img
+              src={villagerMe}
+              alt="Xiaoya's avatar"
+              className="w-[100%] max-w-none animate-bounce"
+            />
+          </div>
+        </div>
+      </FadeInSection>
+
+      {/* Hero text */}
+      <FadeInSection delay={80}>
+        <p className="eyebrow mb-4">
+          software developer · applied AI enthusiast · curious tinkerer
+        </p>
+
+        <h1 className="hero-title">
+          Hi, I&apos;m{" "}
+          <span className="accent-text">Xiaoya</span>.
+        </h1>
+
+        <p className="hero-subtitle mt-5 max-w-2xl">
+          I build thoughtful software across web, mobile, cloud, and applied AI.
+        </p>
+
+        <p className="mt-6 max-w-xl text-[15px] md:text-base leading-7 text-black/60 dark:text-white/60">
+          Four software development internships, production SaaS experience,
+          and a curiosity for turning ideas into useful products.
+        </p>
+
+        <a
+          href="#about"
+          className="inline-flex items-center gap-2 mt-9 text-link text-sm font-medium"
+        >
+          explore my work
+          <FaArrowDown className="text-xs" />
+        </a>
+      </FadeInSection>
+    </div>
+  </section>
 );
 
 export default LandingSection;

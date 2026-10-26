@@ -1,84 +1,81 @@
-# Xiaoya Portfolio
+# Xiaoya Portfolio — Editorial Layout Update
 
-Personal portfolio built with React, TypeScript/TSX, and Tailwind CSS.
+This version keeps Xiaoya's existing pink/green identity, dotted background, dark mode, avatar, project media, routes, TypeScript, React, and Tailwind. The homepage layout is updated toward a cleaner editorial portfolio style.
 
-## Run locally
+## What changed
+
+- Fixed desktop sidebar navigation with `/ section` links
+- Compact mobile navigation
+- Open, narrow main content column instead of large section cards
+- Large editorial `/ about`, `/ experience`, and `/ selected work` headings
+- Experience converted to vertical tabs on desktop and horizontal tabs on mobile
+- Featured projects shown as large image/text spotlights
+- Smaller project cards remain on the Projects page
+- Text hover treatment: accent color, subtle horizontal movement, and animated underline for links
+- IntersectionObserver fade-in sections
+- Existing subtle scroll-driven gleam retained only on featured project imagery
+- Reduced-motion accessibility support
+- Existing project data and work-experience data remain centralized
+
+## Where to edit content
+
+### Work experience, About text, skills, links
+
+`src/data/siteData.ts`
+
+### Projects
+
+`src/data/projects.ts`
+
+Set `featured: true` on a project to make it eligible for the homepage. The homepage displays the first 3 featured projects from the existing sorted list.
+
+### Main layout components
+
+- `src/components/layout/Navbar.tsx` — sidebar + mobile navigation
+- `src/components/home/LandingSection.tsx` — hero
+- `src/components/home/AboutSection.tsx` — About
+- `src/components/home/ExperienceSection.tsx` — tabbed work history
+- `src/components/home/FeaturedProjects.tsx` — selected work
+- `src/components/projects/FeaturedProjectCard.tsx` — large featured project layout
+
+### Styling and hover effects
+
+`src/index.css`
+
+Search for these sections:
+
+- `Editorial section headings`
+- `Text hover language`
+- `Experience tabs`
+- `Featured work`
+- `Enter-once fade animation`
+- `Subtle scroll-reactive shine`
+
+The main text-hover classes are:
+
+- `.text-hover`
+- `.text-link`
+- `.icon-hover`
+
+## Running locally
 
 ```bash
 npm install
 npm start
 ```
 
-## Build
+Production build:
 
 ```bash
 npm run build
 ```
 
-## Deploy to GitHub Pages
+Deploy to GitHub Pages with the existing setup:
 
 ```bash
 npm run deploy
 ```
 
-## Where to update content
+## Note about very recent local edits
 
-Most portfolio content is now separated from the UI components.
-
-### Work experience, About text, skills, and social links
-Edit:
-
-`src/data/siteData.ts`
-
-- `siteConfig`: name, LinkedIn, GitHub
-- `about.description`: About Me paragraph
-- `about.technologies`: technology list
-- `experiences`: add, remove, or update work experience
-
-To add a job, add another object to the `experiences` array. The website will render it automatically.
-
-### Projects
-Edit:
-
-`src/data/projects.ts`
-
-Each project contains its title, description, images, links, tags, and whether it appears on the home page (`featured: true`).
-
-Project media stays in:
-
-`src/assets/`
-
-Import a new image at the top of `src/data/projects.ts`, then assign it to `coverImage` and/or `images`.
-
-### Hero text
-Edit:
-
-`src/components/home/LandingSection.tsx`
-
-### Visual styling
-The existing design and layout are intentionally preserved. Most styling remains as Tailwind utility classes directly in the components. Global background, font, dark-mode background, and animation styles are in:
-
-`src/index.css`
-
-### Routes / pages
-Edit:
-
-`src/App.tsx`
-
-## Structure
-
-```text
-src/
-  assets/              # Existing media/images
-  components/
-    home/               # Homepage sections
-    layout/             # Navbar/Footer
-    projects/           # Reusable project cards
-    ui/                 # Shared UI components
-  data/
-    projects.ts         # All project content
-    siteData.ts         # About, skills, experience, social links
-  hooks/
-  pages/
-  types/
-```
+If you added projects or media locally after the previous shared copy (for example LunaCare), keep your current `src/data/projects.ts` and asset files when applying the layout patch. The layout components read the same `Project` data structure, so your newer project entries will continue to work.
