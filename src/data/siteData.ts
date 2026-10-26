@@ -29,7 +29,7 @@ export const experiences: ExperienceItem[] = [
     company: "Cultara",
     title: "Frontend Developer & Web Experience Engineer",
     location: "Mississauga, Ontario, Canada",
-    date: "Jan 2026 - Present",
+    date: "Jan 2026 - Present (Internship/Part-time)",
     details: [
       "Built and maintained features for a React + TypeScript SaaS application, including dashboard layouts, report pages, graphs, and reusable components.",
       "Created custom hooks and data-mapping logic to transform structured JSON data into dynamic UI elements such as scorecards, gauges, charts, tabs, and evidence/confidence views.",
@@ -41,7 +41,7 @@ export const experiences: ExperienceItem[] = [
     company: "Infostructure Technology Inc",
     title: "Application Developer",
     location: "Brampton, Ontario, Canada",
-    date: "May 2025 - Aug 2025 (Internship)",
+    date: "May 2025 - Aug 2025 (Internship/Co-op)",
     details: [
       "Developed and optimized backend services and RESTful APIs for childcare management systems using C# and .NET.",
       "Built responsive user interfaces with Bootstrap, JavaScript, Razor, Ajax, and jQuery.",
@@ -53,7 +53,7 @@ export const experiences: ExperienceItem[] = [
     company: "Sheridan College Centre for Applied AI (CAAI) + TELUS",
     title: "Application Developer",
     location: "Oakville, Ontario, Canada",
-    date: "May 2023 - Dec 2023 (Co-op)",
+    date: "May 2023 - Dec 2023 (Internship/Co-op)",
     details: [
       "Developed an Android app with Firebase to collect Wi-Fi access point data in the college.",
       "Developed machine learning models for TELUS to implement a 3-D indoor location system.",
@@ -65,7 +65,7 @@ export const experiences: ExperienceItem[] = [
     company: "Ontario Public and Business Service Delivery",
     title: "Low-Code Application Developer",
     location: "Toronto, Ontario, Canada",
-    date: "Jan 2022 - Sep 2022 (Co-op)",
+    date: "Jan 2022 - Sep 2022 (Internship/Co-op)",
     details: [
       "Created and maintained projects using C#, ASP.NET Core MVC, and Entity Framework.",
       "Worked with ASP.NET Core Blazor Server, AJAX, jQuery, HTML, and CSS.",

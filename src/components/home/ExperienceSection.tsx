@@ -45,7 +45,9 @@ const ExperienceSection = () => {
               {activeExperience.details.map((detail) => (
                 <li key={detail} className="experience-detail">
                   <FaAngleRight className="text-[#c57f92] dark:text-[#3bba9c] shrink-0 mt-1" />
-                  <span>{detail}</span>
+                  <span className="text-black/70 dark:text-white/70">
+                    {detail}
+                  </span>
                 </li>
               ))}
             </ul>

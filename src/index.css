@@ -78,7 +78,7 @@ body {
   font-size: 0.72rem;
   letter-spacing: 0.09em;
   text-transform: lowercase;
-  color: rgba(49, 56, 63, 0.5);
+  color: rgba(35, 39, 44, 0.5);
 }
 
 .dark .eyebrow {
@@ -333,7 +333,7 @@ body {
   height: 100%;
   min-height: 300px;
   object-fit: cover;
-  transition: transform 450ms cubic-bezier(.2,.7,.2,1), filter 350ms ease;
+  transition: transform 450ms cubic-bezier(.2, .7, .2, 1), filter 350ms ease;
 }
 
 .featured-media-overlay {
@@ -439,7 +439,7 @@ body {
   pointer-events: none;
   opacity: var(--scroll-gleam-opacity);
   transform: translateX(var(--scroll-gleam-x));
-  background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,.05) 42%, rgba(255,255,255,.38) 50%, rgba(255,255,255,.05) 58%, transparent 68%);
+  background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, .05) 42%, rgba(255, 255, 255, .38) 50%, rgba(255, 255, 255, .05) 58%, transparent 68%);
 }
 
 @supports (animation-timeline: view()) {
@@ -450,17 +450,22 @@ body {
   }
 
   @keyframes media-scroll-gleam {
-    0%, 100% {
+
+    0%,
+    100% {
       --scroll-gleam-x: -125%;
       --scroll-gleam-opacity: 0;
     }
+
     45% {
       --scroll-gleam-opacity: 0.08;
     }
+
     50% {
       --scroll-gleam-x: 0%;
       --scroll-gleam-opacity: 0.16;
     }
+
     65% {
       --scroll-gleam-x: 125%;
       --scroll-gleam-opacity: 0.04;
@@ -557,7 +562,9 @@ code {
     scroll-behavior: auto;
   }
 
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
