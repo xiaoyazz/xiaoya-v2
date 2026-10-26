@@ -42,11 +42,6 @@ const LandingSection = () => (
           I build thoughtful software across web, mobile, cloud, and applied AI.
         </p>
 
-        <p className="mt-6 max-w-xl text-[15px] md:text-base leading-7 text-black/60 dark:text-white/60">
-          Four software development internships, production SaaS experience,
-          and a curiosity for turning ideas into useful products.
-        </p>
-
         <a
           href="#about"
           className="inline-flex items-center gap-2 mt-9 text-link text-sm font-medium"

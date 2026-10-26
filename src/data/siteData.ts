@@ -9,7 +9,7 @@ export const siteConfig = {
 
 export const about = {
   description:
-    "I am a Computer Science student graduating in December 2026. I'm passionate about full-stack development, mobile computing, and AI. Outside of school and work, I like camping, cycling, snowboarding, and video games.",
+    "I am a Computer Science student graduating in December 2026. I'm passionate about full-stack development, mobile computing, and AI. Outside of school and work, I like camping, cycling, and snowboarding.",
   technologies: [
     "iOS & Android Development",
     "Python",
