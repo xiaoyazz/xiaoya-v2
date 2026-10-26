@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/xiaoya-v2/static/css/main.87f00089.css",
-    "main.js": "/xiaoya-v2/static/js/main.7fe4217c.js",
+    "main.css": "/xiaoya-v2/static/css/main.2548dfaa.css",
+    "main.js": "/xiaoya-v2/static/js/main.96b50b21.js",
     "static/media/WeatherApp.png": "/xiaoya-v2/static/media/WeatherApp.a1a8226bf403c3eebab7.png",
     "static/media/Library2.png": "/xiaoya-v2/static/media/Library2.3732abb190fc9b52aa82.png",
     "static/media/Library3.png": "/xiaoya-v2/static/media/Library3.6a3937add0e0d3f1ef29.png",
@@ -15,11 +15,11 @@
     "static/media/Library.png": "/xiaoya-v2/static/media/Library.d37f3d85f7b77f732f1a.png",
     "static/media/weather1.jpeg": "/xiaoya-v2/static/media/weather1.e0f6cbadec961f20d499.jpeg",
     "index.html": "/xiaoya-v2/index.html",
-    "main.87f00089.css.map": "/xiaoya-v2/static/css/main.87f00089.css.map",
-    "main.7fe4217c.js.map": "/xiaoya-v2/static/js/main.7fe4217c.js.map"
+    "main.2548dfaa.css.map": "/xiaoya-v2/static/css/main.2548dfaa.css.map",
+    "main.96b50b21.js.map": "/xiaoya-v2/static/js/main.96b50b21.js.map"
   },
   "entrypoints": [
-    "static/css/main.87f00089.css",
-    "static/js/main.7fe4217c.js"
+    "static/css/main.2548dfaa.css",
+    "static/js/main.96b50b21.js"
   ]
 }
