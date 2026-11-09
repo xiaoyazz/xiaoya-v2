@@ -10,7 +10,7 @@ const script: { command: string; output: Line[] }[] = [
   {
     command: 'whoami',
     output: [
-      'Hi, I’m Xiaoya',
+      'Hi, I’m Xiaoya.',
       'Welcome to my little desktop on the web.',
     ],
   },
@@ -24,7 +24,7 @@ const script: { command: string; output: Line[] }[] = [
       ['Weather', 'what it’s like in Toronto right now.'],
       ['Spotify', 'a playlist I’ve had on repeat lately.'],
       ['Projects', 'things I’ve built: web, mobile, games, and a bit of ML.'],
-      ['Photos', 'moments I took'],
+      ['Photos', 'moments I took.'],
       ['RESUME.txt', 'the short version of my experience.'],
     ],
   },

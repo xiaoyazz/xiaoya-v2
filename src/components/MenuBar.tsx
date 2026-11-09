@@ -1,4 +1,5 @@
 import { person } from '../data/siteData';
+import { CoffeeButton } from './CoffeeButton';
 import { MenuClock } from './MenuClock';
 import { githubPath, linkedinPath } from './SocialIcons';
 
@@ -10,9 +11,9 @@ export function MenuBar() {
   return (
     <header className="desktop-bar">
       <div className="menu-left">
+        <CoffeeButton />
         <div className="app-menu-wrap">
           <button className="menu-app desktop-title" id="app-menu-toggle" aria-expanded="false" aria-controls="app-menu" aria-label="Xiaoya Zou menu">
-            <span className="name-coffee" aria-hidden="true"><img src="assets/icons/iced-coffee.png" alt="" width={30} height={30} /></span>
             <span>{person.name}</span>
           </button>
           <div className="bar-popover app-menu" id="app-menu" hidden>

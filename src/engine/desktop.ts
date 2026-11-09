@@ -561,8 +561,8 @@ export function startDesktop(): void {
     const isGallery = item.kind === 'gallery';
     // Photos scales with the screen (about a quarter of its width), keeping the same proportions.
     const galleryWidth = clamp(board().width * .22, 270, 360); // portrait photos
-    const width = Math.min(isGallery ? galleryWidth : item.kind === 'library' ? 480 : item.id === 'terminal' ? 660 : isProfile ? 460 : item.id === 'hello' ? 760 : 900, area.width);
-    let height = Math.min(isGallery ? Math.round(galleryWidth * 1.33) : item.kind === 'library' ? libraryHeight(Math.min(480, area.width)) : item.id === 'terminal' ? 450 : isProfile ? 500 : item.id === 'hello' ? 620 : 610, area.height);
+    const width = Math.min(isGallery ? galleryWidth : item.kind === 'library' ? 480 : item.id === 'terminal' ? 660 : isProfile ? 340 : item.id === 'hello' ? 760 : 900, area.width);
+    let height = Math.min(isGallery ? Math.round(galleryWidth * 1.33) : item.kind === 'library' ? libraryHeight(Math.min(480, area.width)) : item.id === 'terminal' ? 450 : isProfile ? 320 : item.id === 'hello' ? 620 : 610, area.height);
     const offset = isProfile || isGallery ? 0 : (openWindows.size % 4) * 23;
     const wideGallery = isGallery && board().width >= COMPACT_MAX_WIDTH + 1;
     const x = clamp(wideGallery ? board().width * .732 : isGallery ? board().width - width - 36 : (board().width - width) / 2 + offset, area.x, area.x + area.width - width);

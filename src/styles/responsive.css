@@ -256,7 +256,8 @@
     transform: none !important;
     animation: none;
   }
-  .desktop-window.gallery-window, .desktop-window.about-window { --win-max: 480px; }
+  .desktop-window.gallery-window { --win-max: 480px; }
+  .desktop-window.about-window { --win-max: 340px; }
   /* The gallery's slides are absolutely positioned, so it needs a definite height. */
   .desktop-window.gallery-window { height: min(560px, calc(100svh - 72px)) !important; }
   .desktop-window .window-header {
@@ -275,6 +276,8 @@
   .desktop-window .window-sidebar { display: none; }
   .desktop-window .window-content { padding: 24px; }
   .desktop-window.gallery-window .window-content { padding: 0; }
+  .desktop-window.about-window .window-header { min-height: 40px; }
+  .desktop-window.about-window .window-content { padding: 0 20px 22px; }
   .desktop-window .inside-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
@@ -282,6 +285,7 @@
   .desktop-window { --win-gutter: 8px; border-radius: 14px; }
   .desktop-window .window-content { padding: 20px 18px; }
   .desktop-window.gallery-window .window-content { padding: 0; }
+  .desktop-window.about-window .window-content { padding: 0 18px 20px; }
 }
 
 @media (max-width: 479px) {

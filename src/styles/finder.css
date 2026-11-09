@@ -11,15 +11,6 @@
 :focus, :focus-visible { outline: none !important; }
 
 .desktop-title { gap: 10px; font-size: 14px; font-weight: 600; }
-.name-coffee {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 24px;
-  height: 30px;
-  flex: none;
-}
-.name-coffee img { display: block; width: 30px; height: 30px; object-fit: contain; }
 
 .desktop-bar > button { color: #585b61; font-size: 13px; }
 .header-socials { display: flex; align-items: center; gap: 2px; }
@@ -110,23 +101,18 @@
 .about-window .traffic-lights { padding-left: 18px; }
 .about-window .traffic-lights button:disabled { opacity: 1; background: #d8d8da; border-color: #cccccf; }
 .about-window .traffic-lights button:disabled span { visibility: hidden; }
-.about-window .window-content { min-height: 0; padding: 16px 32px 26px; background: transparent; }
-.about-summary { display: flex; flex-direction: column; align-items: flex-start; max-width: 350px; margin: 0 auto; text-align: left; }
-
-.about-window h2 { margin: 0 0 5px; font-size: 32px; line-height: 1.2; letter-spacing: -.03em; }
-.about-window .about-subtitle { margin: 0 0 24px; color: #85858a; font-size: 14px; line-height: 1.4; }
-.about-window .about-bio { margin: 0; color: #4e4e53; font-size: 14px; line-height: 1.65; }
-.about-actions { display: flex; justify-content: flex-start; gap: 10px; margin-top: 24px; }
-.about-actions a { display: inline-flex; align-items: center; justify-content: center; min-width: 104px; min-height: 31px; padding: 5px 12px; border: 1px solid #dedee1; border-radius: 7px; background: #ececee; color: #27272a; font-size: 13px; text-decoration: none; }
-.about-actions a:hover { background: #e1e1e5; text-decoration: none; }
-.about-actions a { gap: 7px; }
-.about-actions .social-icon { flex: none; width: 15px; height: 15px; }
-.about-window .about-copyright { margin: 26px 0 0; color: #9b9ba0; font-size: 11px; line-height: 1.5; }
-
-@media (max-width: 600px) {
-  .about-window .window-content { padding: 14px 24px 24px; }
-  .about-window h2 { font-size: 29px; }
-}
+.about-window .window-content { min-height: 0; padding: 0 28px 24px; background: transparent; }
+.about-summary { display: flex; flex-direction: column; align-items: center; max-width: 320px; margin: 0 auto; text-align: center; }
+.about-icon { display: block; font-size: 64px; line-height: 1; margin: 0 0 12px; filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .12)); }
+.about-window h2 { margin: 0; font-size: 26px; line-height: 1.2; letter-spacing: -.02em; }
+.about-specs { display: grid; grid-template-columns: auto 1fr; gap: 5px 10px; margin: 16px 0 0; font-size: 12px; line-height: 1.4; text-align: left; }
+.about-specs dt { color: #1d1d1f; font-weight: 600; text-align: right; }
+.about-specs dd { margin: 0; color: #6e6e73; }
+.about-actions { display: flex; justify-content: center; gap: 8px; margin-top: 20px; }
+.about-actions a { display: inline-flex; align-items: center; justify-content: center; gap: 6px; min-height: 26px; padding: 3px 12px; border: 1px solid #dedee1; border-radius: 6px; background: #fff; color: #27272a; font-size: 12px; text-decoration: none; box-shadow: 0 .5px 1px rgba(0, 0, 0, .08); }
+.about-actions a:hover { background: #f0f0f2; text-decoration: none; }
+.about-actions .social-icon { flex: none; width: 13px; height: 13px; }
+.about-window .about-copyright { margin: 18px 0 0; color: #a1a1a6; font-size: 10px; line-height: 1.5; }
 
 /* Finder-style toolbar in the title bar of folder windows: Back/Forward pill + location name. */
 .window-breadcrumb { display: flex; align-items: center; gap: 14px; min-width: 0; }
