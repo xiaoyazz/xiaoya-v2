@@ -6,7 +6,7 @@ export function ResumeContent() {
     <article className="resume-document">
       <header className="resume-header">
         <h2>{person.name}</h2>
-        <p>{person.role}</p>
+        {/* <p>{person.role}</p> */}
       </header>
       <section className="resume-section">
         <h3>Education</h3>

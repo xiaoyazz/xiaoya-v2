@@ -10,7 +10,7 @@ const script: { command: string; output: Line[] }[] = [
   {
     command: 'whoami',
     output: [
-      'Hi, I’m Xiaoya — a software developer based in Toronto.',
+      'Hi, I’m Xiaoya — a CS student based in Toronto.',
       'Welcome to my little desktop on the web.',
     ],
   },
