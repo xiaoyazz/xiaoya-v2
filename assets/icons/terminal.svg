@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" role="img" aria-label="Terminal">
+  <defs>
+    <linearGradient id="term-frame" x1="40" y1="4" x2="40" y2="76" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E9E9EC"/><stop offset="1" stop-color="#B9BAC0"/>
+    </linearGradient>
+    <linearGradient id="term-screen" x1="40" y1="12" x2="40" y2="70" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2E2F33"/><stop offset="1" stop-color="#121214"/>
+    </linearGradient>
+    <filter id="term-shadow" x="0" y="0" width="80" height="82" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000" flood-opacity=".25"/>
+    </filter>
+  </defs>
+  <g filter="url(#term-shadow)">
+    <!-- Light metal frame, like the macOS Terminal icon. -->
+    <rect x="4" y="4" width="72" height="72" rx="17" fill="url(#term-frame)"/>
+    <rect x="4.5" y="4.5" width="71" height="71" rx="16.5" fill="none" stroke="#fff" stroke-opacity=".6"/>
+    <!-- Dark screen. -->
+    <rect x="10" y="11" width="60" height="58" rx="9" fill="url(#term-screen)"/>
+    <rect x="10.5" y="11.5" width="59" height="57" rx="8.5" fill="none" stroke="#000" stroke-opacity=".35"/>
+    <!-- Prompt: >_ -->
+    <path d="M20 27l9 7-9 7" fill="none" stroke="#F2F2F4" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="32" y="40" width="14" height="3.6" rx="1.8" fill="#F2F2F4"/>
+  </g>
+</svg>
