@@ -1,0 +1,48 @@
+/* A viewport-sized wallpaper keeps the home screen steady while it scrolls. */
+:root {
+  background: #075a91;
+}
+
+body {
+  isolation: isolate;
+  background: transparent;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #075a91 url("/assets/wallpaper/desktop-wallpaper.jpg") center / cover no-repeat;
+  /* Soft, nostalgic look: gentle blur, slightly faded and warm. Tweak --wallpaper-blur to taste. */
+  filter: blur(var(--wallpaper-blur, 4px)) saturate(.82) sepia(.14) contrast(.94) brightness(1.03);
+  transform: scale(1.06);
+  /* hides the blur's soft edge at the screen borders */
+  pointer-events: none;
+}
+
+/* Faint vignette, like an old photo print. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 55%, rgba(30, 20, 10, .22) 100%);
+  pointer-events: none;
+}
+
+.workspace {
+  background: transparent;
+}
+
+#desktop .file-label,
+.desktop-status p,
+.tech-stack-title {
+  color: #fff;
+  text-shadow: 0 1px 2px #000d, 0 2px 5px #0008;
+}
+
+#desktop .desktop-item.is-selected .file-label {
+  color: #294e7e;
+  text-shadow: none;
+}

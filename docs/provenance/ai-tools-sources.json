@@ -1,0 +1,42 @@
+{
+  "selection": "AI Tools group approved by Xiaoya: OpenAI, Claude, and GitHub Copilot.",
+  "icons": {
+    "collection": "Simple Icons",
+    "version": "14.15.0",
+    "repository": "https://github.com/simple-icons/simple-icons",
+    "attribution": "Simple Icons contributors",
+    "license": "CC0-1.0",
+    "licenseUrl": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.15.0/LICENSE.md",
+    "licenseFile": "assets/tech/AI-ICONS-LICENSE.txt",
+    "assets": [
+      {
+        "id": "openai",
+        "name": "OpenAI",
+        "file": "assets/tech/openai.svg",
+        "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.15.0/icons/openai.svg",
+        "sha256": "2b4a04ddc2395b20d168694d3850ce2050a702c4a0cdeb4d8b31b9a970481a8c",
+        "bytes": 1570,
+        "defaultColor": "black"
+      },
+      {
+        "id": "claude",
+        "name": "Claude",
+        "file": "assets/tech/claude.svg",
+        "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.15.0/icons/claude.svg",
+        "sha256": "2d6fda79eb18ddccca35b799eeb3cece0dfabc22520ce3b10abd25668df9fa93",
+        "bytes": 1921,
+        "defaultColor": "black"
+      },
+      {
+        "id": "copilot",
+        "name": "GitHub Copilot",
+        "file": "assets/tech/copilot.svg",
+        "source": "https://raw.githubusercontent.com/simple-icons/simple-icons/14.15.0/icons/githubcopilot.svg",
+        "sha256": "c72c1e0018e84b3128c5a1ac43ec2be135ac6ec4eb9c0ea18ed76416d23f2af3",
+        "bytes": 1744,
+        "defaultColor": "black"
+      }
+    ]
+  },
+  "validation": "Original SVGs preserved; XML parsed and checked for scripts, foreignObject, event handlers, external references, CSS imports, and XML entities."
+}

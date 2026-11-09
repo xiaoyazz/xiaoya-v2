@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 180 150" fill="none" role="img" aria-label="Blue folder">
+  <defs>
+    <!-- Back panel: slightly deeper blue, lit from the top. -->
+    <linearGradient id="folder-back" x1="90" y1="16" x2="90" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5DB7F2"/><stop offset=".35" stop-color="#47A6EB"/><stop offset="1" stop-color="#3893E0"/>
+    </linearGradient>
+    <!-- Front panel: lighter, flat-faced, with a gentle top-to-bottom falloff. -->
+    <linearGradient id="folder-front" x1="90" y1="42" x2="90" y2="136" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8FD2FB"/><stop offset=".18" stop-color="#7BC8F9"/><stop offset="1" stop-color="#5AB3F3"/>
+    </linearGradient>
+    <!-- Shadow the front panel casts onto the back, just above its top edge. -->
+    <linearGradient id="folder-cast" x1="90" y1="33" x2="90" y2="43" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B4F8C" stop-opacity="0"/><stop offset="1" stop-color="#0B4F8C" stop-opacity=".2"/>
+    </linearGradient>
+    <!-- Soft sheen across the upper part of the front panel. -->
+    <linearGradient id="folder-sheen" x1="90" y1="43" x2="90" y2="80" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFFFFF" stop-opacity=".22"/><stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="folder-shadow" x="4" y="8" width="172" height="142" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0E2A47" flood-opacity=".22"/>
+    </filter>
+    <clipPath id="folder-back-clip">
+      <path d="M16 30C16 22.27 22.27 16 30 16H63.6C68.2 16 71.5 17.5 74.6 20.8L79.2 25.7C81.6 28.2 83.7 29 87.2 29H150C157.73 29 164 35.27 164 43V122C164 129.73 157.73 136 150 136H30C22.27 136 16 129.73 16 122V30Z"/>
+    </clipPath>
+  </defs>
+
+  <g filter="url(#folder-shadow)">
+    <!-- Back panel with the tab on the left. -->
+    <path d="M16 30C16 22.27 22.27 16 30 16H63.6C68.2 16 71.5 17.5 74.6 20.8L79.2 25.7C81.6 28.2 83.7 29 87.2 29H150C157.73 29 164 35.27 164 43V122C164 129.73 157.73 136 150 136H30C22.27 136 16 129.73 16 122V30Z" fill="url(#folder-back)"/>
+    <rect x="16" y="33" width="148" height="10" fill="url(#folder-cast)" clip-path="url(#folder-back-clip)"/>
+    <!-- Highlight along the back panel's top edge and tab. -->
+    <path d="M17 30C17 22.82 22.82 17 30 17H63.6C67.9 17 70.9 18.4 73.9 21.5L78.5 26.4C81.1 29.1 83.5 30 87.2 30H150C157.18 30 163 35.82 163 43" stroke="#FFFFFF" stroke-opacity=".4" stroke-width="1.2" stroke-linecap="round"/>
+
+    <!-- Front panel. -->
+    <path d="M16 54C16 47.37 21.37 42 28 42H152C158.63 42 164 47.37 164 54V122C164 129.73 157.73 136 150 136H30C22.27 136 16 129.73 16 122V54Z" fill="url(#folder-front)"/>
+    <path d="M16 54C16 47.37 21.37 42 28 42H152C158.63 42 164 47.37 164 54V80H16V54Z" fill="url(#folder-sheen)"/>
+    <!-- Crisp light edge where the front panel's top catches the light. -->
+    <path d="M17.2 53.6C17.2 47.97 21.77 43.4 27.4 43.4H152.6C158.23 43.4 162.8 47.97 162.8 53.6" stroke="#FFFFFF" stroke-opacity=".55" stroke-width="1.1" stroke-linecap="round"/>
+    <!-- Faint darker rim so the folder holds its shape on light wallpapers. -->
+    <path d="M16.5 54C16.5 47.65 21.65 42.5 28 42.5H152C158.35 42.5 163.5 47.65 163.5 54V122C163.5 129.46 157.46 135.5 150 135.5H30C22.54 135.5 16.5 129.46 16.5 122V54Z" stroke="#1F6FB5" stroke-opacity=".18"/>
+  </g>
+</svg>

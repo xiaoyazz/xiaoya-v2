@@ -1,0 +1,19 @@
+{
+  "name": "Photos-style app icon",
+  "file": "assets/icons/photos-app.svg",
+  "collection": "WhiteSur icon theme",
+  "originalFile": "src/apps/scalable/shotwell.svg",
+  "repository": "https://github.com/vinceliuice/WhiteSur-icon-theme",
+  "commit": "73d8040da51a9ed74e47c7366e7e9ff437601a5c",
+  "source": "https://raw.githubusercontent.com/vinceliuice/WhiteSur-icon-theme/73d8040da51a9ed74e47c7366e7e9ff437601a5c/src/apps/scalable/shotwell.svg",
+  "attribution": "WhiteSur icon theme contributors (vinceliuice)",
+  "license": "GPL-3.0",
+  "licenseFile": "assets/icons/PHOTOS-ICON-LICENSE.txt",
+  "licenseSource": "https://raw.githubusercontent.com/vinceliuice/WhiteSur-icon-theme/73d8040da51a9ed74e47c7366e7e9ff437601a5c/COPYING",
+  "sha256": "220f297a09e931d91888655d06ee779cab20c3a041b9f5459f99c3bbc659e5a4",
+  "bytes": 29781,
+  "licenseSha256": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+  "unmodifiedOriginal": true,
+  "description": "Multicolor Photos-style flower on a white rounded-square app tile. Used as the gallery launcher, not a technology skill.",
+  "validation": "Original SVG preserved; visually checked at 256px. XML parsed; no scripts, foreignObject, event handlers, external resource links, CSS imports, or entities. Two original embedded PNG data images are local shadow details."
+}

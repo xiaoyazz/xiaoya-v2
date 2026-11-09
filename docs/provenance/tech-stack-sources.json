@@ -1,0 +1,110 @@
+{
+  "technologyContentSource": {
+    "repository": "xiaoyazz/xiaoya-v2",
+    "file": "src/data/siteData.ts",
+    "source": "https://github.com/xiaoyazz/xiaoya-v2/blob/main/src/data/siteData.ts",
+    "githubBlobSha": "c03d79aa3e54ce7810618a2ac70e351cdd81dffd",
+    "selection": "Technology list and display order supplied by Xiaoya, with C# and .NET combined in one icon: Java, C# / .NET, Python, React, iOS, Android, MongoDB, AWS, GCP, Docker."
+  },
+  "icons": {
+    "collection": "Devicon",
+    "version": "v2.17.0",
+    "attribution": "Devicon contributors",
+    "repository": "https://github.com/devicons/devicon",
+    "license": "MIT",
+    "licenseUrl": "https://github.com/devicons/devicon/blob/v2.17.0/LICENSE",
+    "assets": [
+      {
+        "id": "java",
+        "name": "Java",
+        "file": "assets/tech/java.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/java/java-original.svg",
+        "sha256": "7582e518a9c02425f97155e5a3bd39d1a3a7d421b78caf9c8df7443dad3edc5d",
+        "bytes": 1540
+      },
+      {
+        "id": "csharp",
+        "name": "C# / .NET",
+        "file": "assets/tech/csharp.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/csharp/csharp-original.svg",
+        "sha256": "7093478d0888e22a224b6fa832da6c9ffd14c433de8bd14aab0c1cb50925f3ee",
+        "bytes": 851
+      },
+      {
+        "id": "python",
+        "name": "Python",
+        "file": "assets/tech/python.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/python/python-original.svg",
+        "sha256": "71493b4a732f0532b3a03a7a95da3ee11a65766367c8303b901ffbe7bf91a3a2",
+        "bytes": 2300
+      },
+      {
+        "id": "react",
+        "name": "React",
+        "file": "assets/tech/react.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/react/react-original.svg",
+        "sha256": "5825b649c8c04dec13ecf01d0182401bd0ec71789d2fa06224866d882cd1515f",
+        "bytes": 2387
+      },
+      {
+        "id": "ios",
+        "name": "iOS",
+        "file": "assets/tech/ios.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/apple/apple-original.svg",
+        "sha256": "8e6eef82e047f040249bc0ed50d288cfddfa52176cf5adcb9b17bae46b472e12",
+        "bytes": 691
+      },
+      {
+        "id": "android",
+        "name": "Android",
+        "file": "assets/tech/android.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/android/android-original.svg",
+        "sha256": "d6c8aa6c2b94c90ff02c1b7e89f9cf863d54db59b459b8b287c19bfb8e664c41",
+        "bytes": 3827
+      },
+      {
+        "id": "mongodb",
+        "name": "MongoDB",
+        "file": "assets/tech/mongodb.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/mongodb/mongodb-original.svg",
+        "sha256": "d9f2bf7041264f4747e9969fb82ede0199c0ac97dfa8632aa0687d702ec05f7b",
+        "bytes": 5611
+      },
+      {
+        "id": "aws",
+        "name": "AWS",
+        "file": "assets/tech/aws.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/amazonwebservices/amazonwebservices-original-wordmark.svg",
+        "sha256": "5b4d8371d79a5c0d3a27ea4e929f772e68d47f7d267496bf9211d5f60fcf8084",
+        "bytes": 3743
+      },
+      {
+        "id": "googlecloud",
+        "name": "GCP",
+        "file": "assets/tech/googlecloud.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/googlecloud/googlecloud-original.svg",
+        "sha256": "1615b3e53228faa14378f1abb2b78e5f6c3f0ec562bc37db3efde885714e6c2f",
+        "bytes": 782
+      },
+      {
+        "id": "docker",
+        "name": "Docker",
+        "file": "assets/tech/docker.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/docker/docker-original.svg",
+        "sha256": "3fd830ea69431ed7a0b8d068cd5b34ad3f00a1a78195d50f13ff56713f2462e1",
+        "bytes": 4452
+      },
+      {
+        "id": "figma",
+        "name": "Figma",
+        "file": "assets/tech/figma.svg",
+        "source": "https://raw.githubusercontent.com/devicons/devicon/v2.17.0/icons/figma/figma-original.svg",
+        "sha256": "d37c2bf1a1d4f10aeffb224e44da672cb8b9510f6e5a2e24b61758262995805e",
+        "bytes": 585
+      }
+    ],
+    "notes": "iOS uses the Apple platform logo; C# / .NET share the C# logo."
+  },
+  "validation": "SVG XML parsed; no script, foreignObject, event handlers, external resource references, CSS imports, or XML entities.",
+  "figmaSelection": "Figma was requested by Xiaoya, after Docker in the dock."
+}

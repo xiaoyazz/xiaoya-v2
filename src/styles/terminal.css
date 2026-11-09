@@ -1,0 +1,32 @@
+/* Terminal window: dark macOS Terminal look. Loaded last so it wins over the generic window styles. */
+.desktop-window.terminal-window {
+  border: .5px solid rgba(255, 255, 255, .14);
+  border-radius: 12px;
+  background: #1c1c1e;
+  box-shadow: 0 22px 60px rgba(0, 0, 0, .45), 0 0 0 .5px rgba(0, 0, 0, .6);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+}
+.desktop-window.terminal-window .window-header { background: #2a2a2d; border-bottom: .5px solid #000; }
+.desktop-window.terminal-window .window-title { color: #b8b8bd; }
+.desktop-window.terminal-window .window-content { padding: 12px 16px 18px; background: #1c1c1e; }
+.terminal-screen {
+  min-height: 100%;
+  color: #e6e6e8;
+  font: 13px/1.6 "SF Mono", ui-monospace, Menlo, Consolas, monospace;
+  white-space: pre-wrap;
+  cursor: text;
+}
+.terminal-screen p { margin: 0; color: inherit; font: inherit; }
+.terminal-block { margin-bottom: 10px; }
+.terminal-prompt { color: #7ee787; }
+.terminal-command { color: #fff; }
+.terminal-output { color: #c9c9ce; }
+.terminal-row { display: grid; grid-template-columns: 12ch minmax(0, 1fr); }
+.terminal-row > span:first-child { color: #9cc9ff; }
+.terminal-muted { margin-bottom: 10px !important; color: #7d7d84 !important; }
+.terminal-cursor { display: inline-block; width: .6em; height: 1.1em; margin-left: 1px; vertical-align: -.2em; background: #e6e6e8; }
+.terminal-cursor.is-blinking { animation: terminal-blink 1.05s steps(1) infinite; }
+@keyframes terminal-blink { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .terminal-cursor.is-blinking { animation: none; } }
+@media (max-width: 599px) { .terminal-screen { font-size: 12px; } }

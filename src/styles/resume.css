@@ -1,0 +1,25 @@
+.desktop-window.document .window-content { padding: 24px 28px 28px; }
+.resume-document { max-width: 660px; margin: 0 auto; color: #292b30; }
+.resume-header { margin-bottom: 20px; }
+.resume-header h2 { margin: 0 0 4px; font-size: 24px; line-height: 1.2; }
+.resume-header p { margin: 0; color: #6e6e73; font-size: 13px; line-height: 1.4; }
+.resume-section + .resume-section { margin-top: 18px; }
+.resume-section h3 { margin: 0 0 7px; color: #77777d; font-size: 11px; line-height: 15px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; }
+.resume-education strong { font-size: 14px; font-weight: 600; line-height: 20px; }
+.resume-education p { margin: 0; color: #53565d; font-size: 13px; line-height: 19px; }
+.resume-education > span { color: #77777d; font-size: 12px; line-height: 18px; }
+.resume-job { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 3px 14px; margin: 0 0 10px; }
+.resume-job:last-child { margin-bottom: 0; }
+.resume-job strong { display: block; font-size: 13px; line-height: 18px; font-weight: 600; }
+.resume-job div > span { display: block; color: #6e6e73; font-size: 12px; line-height: 18px; }
+.resume-job .resume-date { color: #77777d; font-size: 11px; line-height: 18px; text-align: right; white-space: nowrap; }
+.resume-section .resume-technologies, .resume-section .resume-ai { margin: 0; color: #53565d; font-size: 12px; line-height: 19px; }
+.resume-section .resume-ai { margin-top: 4px; }
+.resume-contact { display: flex; gap: 18px; font-size: 13px; line-height: 20px; }
+.resume-contact a { text-decoration: none; }
+
+@media (max-width: 600px) {
+  .desktop-window.document .window-content { padding: 22px 20px; }
+  .resume-job { grid-template-columns: 1fr; gap: 1px; }
+  .resume-job .resume-date { text-align: left; }
+}

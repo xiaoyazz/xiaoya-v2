@@ -1,0 +1,145 @@
+.desktop-window.gallery-window {
+  border: 1px solid #ffffff33;
+  border-radius: 22px;
+  background: #e8eff594;
+  box-shadow: inset 0 1px 0 #ffffff12, 0 14px 40px #1424391f;
+  backdrop-filter: blur(28px) saturate(1.25);
+  -webkit-backdrop-filter: blur(28px) saturate(1.25);
+}
+.gallery-window .window-header { height: 38px; background: #ffffff0d; border-bottom: 0; }
+.gallery-window .window-title { color: #666a73; font-size: 12px; font-weight: 600; }
+.gallery-window .window-content { min-height: 0; padding: 0; overflow: hidden; background: transparent; }
+.project-gallery, .gallery-shell { display: flex; flex-direction: column; height: 100%; min-height: 0; }
+.project-gallery { outline-offset: -3px; }
+.gallery-toolbar { display: flex; align-items: center; gap: 8px; min-height: 40px; padding: 0 16px 8px; flex: none; }
+.gallery-round-button { display: inline-flex; flex: none; align-items: center; justify-content: center; width: 26px; height: 26px; padding: 0; border: 1px solid #ffffff29; border-radius: 50%; background: #ffffff38; color: #525c68; }
+.gallery-round-button:hover { background: #ffffffbd; color: #292d34; }
+.gallery-round-button svg { width: 17px; height: 17px; }
+.gallery-heading { flex: 1; min-width: 0; text-align: center; }
+.gallery-heading strong { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; line-height: 16px; font-weight: 600; color: #42474f; }
+.gallery-subtitle { display: block; color: #80858d; font-size: 9px; line-height: 14px; }
+.gallery-main { display: flex; flex: 1; min-height: 0; overflow: hidden; }
+.gallery-stage { position: relative; flex: 1; min-height: 0; margin: 0; padding: 0; border: 0; text-align: inherit; color: inherit; cursor: zoom-in; overflow: hidden; background: #ffffff0d; }
+.gallery-slide { position: absolute; inset: 8px 16px 16px; display: flex; align-items: center; justify-content: center; transition: transform 450ms cubic-bezier(.22,.61,.36,1); }
+.gallery-slide-current { transform: translateY(0); }
+.gallery-slide-next { transform: translateY(calc(100% + 16px)); }
+.gallery-stage.is-scrolling .gallery-slide-current { transform: translateY(calc(-100% - 16px)); }
+.gallery-stage.is-scrolling .gallery-slide-next { transform: translateY(0); }
+.gallery-image { display: block; width: 100%; height: 100%; object-fit: contain; }
+
+/* Photos: the picture fills the whole window edge to edge, with frosted-glass controls floating on top (iOS Photos style). */
+.desktop-window.gallery-window { border: .5px solid rgba(255, 255, 255, .35); border-radius: 26px; background: #111; box-shadow: 0 18px 50px rgba(10, 20, 40, .3); }
+.desktop-window.gallery-window .window-header {
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 3;
+  height: 52px;
+  min-height: 0;
+  background: transparent;
+  border-bottom: 0;
+}
+.desktop-window.gallery-window .window-title { visibility: hidden; }
+.desktop-window.gallery-window .traffic-lights {
+  justify-self: start;
+  margin-left: 12px;
+  padding: 7px 9px;
+  border-radius: 999px;
+  background: rgba(20, 20, 24, .38);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.desktop-window.gallery-window .window-main { position: relative; height: 100%; }
+.gallery-shell { position: relative; }
+.gallery-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 96px;
+  background: linear-gradient(rgba(0, 0, 0, .42), rgba(0, 0, 0, 0));
+  pointer-events: none;
+}
+.gallery-toolbar { position: absolute; inset: 0; z-index: 2; min-height: 0; padding: 0; pointer-events: none; }
+.gallery-heading { position: absolute; top: 0; left: 96px; right: 96px; height: 52px; display: flex; flex-direction: column; justify-content: center; }
+.gallery-heading strong { color: #fff; font-size: 13px; text-shadow: 0 1px 3px rgba(0, 0, 0, .4); }
+.gallery-subtitle { color: rgba(255, 255, 255, .78); font-size: 10px; text-shadow: 0 1px 3px rgba(0, 0, 0, .4); }
+.gallery-toolbar .gallery-round-button {
+  position: absolute;
+  top: 50%;
+  width: 34px;
+  height: 34px;
+  border: .5px solid rgba(255, 255, 255, .28);
+  background: rgba(24, 24, 28, .34);
+  color: #fff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .18);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  transform: translateY(-50%);
+  pointer-events: auto;
+}
+.gallery-toolbar .gallery-round-button:first-child { left: 10px; }
+.gallery-toolbar .gallery-round-button:last-child { right: 10px; }
+.gallery-toolbar .gallery-round-button:hover { background: rgba(24, 24, 28, .5); color: #fff; }
+.gallery-main { height: 100%; }
+.gallery-stage { background: #111; }
+.gallery-slide { inset: 0; }
+.gallery-slide-next { transform: translateY(100%); }
+.gallery-stage.is-scrolling .gallery-slide-current { transform: translateY(-100%); }
+.gallery-image { object-fit: cover; }
+.gallery-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 12px;
+  z-index: 2;
+  display: flex;
+  gap: 6px;
+  padding: 7px 11px;
+  border: .5px solid rgba(255, 255, 255, .28);
+  border-radius: 999px;
+  background: rgba(24, 24, 28, .3);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+.gallery-dots span { width: 6px; height: 6px; border-radius: 50%; background: rgba(255, 255, 255, .45); transition: background 200ms, transform 200ms; }
+.gallery-dots span.is-active { background: #fff; transform: scale(1.15); }
+/* Photo names are hidden visually; screen readers still hear them via the live announcement. */
+.gallery-heading { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+.gallery-shell::before { height: 64px; background: linear-gradient(rgba(0, 0, 0, .25), rgba(0, 0, 0, 0)); }
+
+/* Photo Library window: iOS-style grid of square thumbnails, and a full-size viewer. */
+.desktop-window.library-window { border-radius: 22px; background: #fbfbfc; }
+.library-window .window-header { border-bottom: 0; background: transparent; }
+.desktop-window.library-window .window-content { padding: 0; background: transparent; }
+.library-header { box-sizing: border-box; height: 78px; padding: 6px 18px 0; }
+.library-header h2 { margin: 0; color: #1d1d1f; font-size: 26px; font-weight: 700; letter-spacing: -.02em; }
+.library-header p { margin: 2px 0 0; color: #86868b; font-size: 12px; }
+.library-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2px; padding-bottom: 2px; }
+.library-thumb { display: block; padding: 0; aspect-ratio: 1; overflow: hidden; background: #e8e8ed; border-radius: 0; cursor: zoom-in; }
+.library-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 200ms ease-out, filter 200ms; }
+.library-thumb:hover img { transform: scale(1.04); filter: brightness(1.05); }
+.library-thumb:focus-visible { outline: 3px solid #0a84ff; outline-offset: -3px; }
+.library-viewer { position: relative; display: grid; place-items: center; height: 100%; min-height: 360px; background: #0b0b0d; }
+.desktop-window.library-window .window-content:has(.library-viewer) { overflow: hidden; }
+.library-viewer-image { display: block; max-width: 100%; max-height: 100%; width: 100%; height: 100%; object-fit: contain; }
+.library-glass {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  border: .5px solid rgba(255, 255, 255, .28);
+  border-radius: 999px;
+  background: rgba(30, 30, 34, .45);
+  color: #fff;
+  font-size: 13px;
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+}
+.library-glass svg { width: 15px; height: 15px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.library-back { top: 12px; left: 12px; height: 32px; padding: 0 12px 0 8px; }
+.library-count { top: 12px; right: 12px; height: 32px; padding: 0 12px; font-size: 12px; }
+.library-step { top: 50%; justify-content: center; width: 36px; height: 36px; padding: 0; transform: translateY(-50%); }
+.library-prev { left: 12px; }
+.library-next { right: 12px; }
+.library-glass:hover { background: rgba(30, 30, 34, .62); }

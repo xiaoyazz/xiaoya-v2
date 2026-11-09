@@ -1,0 +1,13 @@
+{
+  "file": "assets/wallpaper/desktop-wallpaper.jpg",
+  "source": "https://images.unsplash.com/photo-1741764996180-7adacc180922?q=80&w=2047&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=NHwxMjA3fDA%3D",
+  "providedBy": "Xiaoya Zou",
+  "description": "Blue sky and white clouds, used as the desktop wallpaper",
+  "dimensions": [
+    2047,
+    1403
+  ],
+  "sizeBytes": 222390,
+  "sha256": "ee4c29249ce8a05ca79e59a309d2d9e97957995920c93f7e7508ed3dfcd43e66",
+  "processing": "Downloaded JPEG used unchanged; centered cover cropping is handled by CSS."
+}

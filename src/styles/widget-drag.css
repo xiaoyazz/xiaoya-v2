@@ -1,0 +1,10 @@
+.weather-widget, .spotify-widget { position: relative; }
+[data-widget] { pointer-events: auto; }
+.widget-drag-handle { cursor: grab; touch-action: none; user-select: none; }
+.widget-drag-handle:focus-visible { outline: 2px solid #82a9d9; outline-offset: 3px; border-radius: 4px; }
+.message-heading .message-close { cursor: pointer; touch-action: manipulation; }
+.spotify-drag-handle { position: absolute; left: 0; right: 0; top: -12px; height: 14px; display: flex; justify-content: center; align-items: center; }
+.spotify-drag-handle span { display: block; width: 34px; height: 3px; border-radius: 2px; background: #b8b9bd; opacity: .75; transition: opacity 150ms; }
+.spotify-drag-handle:hover span, .spotify-drag-handle:focus-visible span { opacity: 1; }
+.is-widget-dragging .widget-drag-handle { cursor: grabbing; }
+.desktop-widgets.is-widget-dragging iframe { pointer-events: none; }

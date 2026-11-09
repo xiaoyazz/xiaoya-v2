@@ -1,0 +1,203 @@
+:root { --tech-stack-height: 144px; --dock-reserve: 0px; --desktop-status-height: 46px; --desktop-bottom-inset: 16px; --desktop-dock-width: 568px; }
+body { padding-bottom: 0; }
+.workspace { isolation: auto; }
+.desktop { z-index: 910; pointer-events: none; }
+.desktop-item { pointer-events: auto; }
+.desktop-widgets { z-index: 920; pointer-events: none; }
+.desktop-widgets > * { pointer-events: auto; }
+.windows { z-index: 940; }
+.tech-stack {
+  position: fixed;
+  z-index: 900;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: auto;
+  padding: 0 20px var(--desktop-bottom-inset);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 10px;
+  pointer-events: none;
+}
+.tech-stack-title {
+  margin: 0;
+  color: #85858a;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 14px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  transition: opacity 150ms;
+}
+.desktop-dock-row { display: flex; align-items: flex-end; gap: 12px; width: max-content; max-width: 100%; min-width: 0; }
+.tech-stack-group { display: flex; flex-direction: column; align-items: center; gap: 10px; min-width: 0; }
+.tech-dock {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: max-content;
+  max-width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 8px 10px;
+  list-style: none;
+  border: 1px solid rgba(255, 255, 255, .2);
+  border-radius: 20px;
+  background: rgba(235, 242, 248, .38);
+  box-shadow: inset 0 1px 0 #ffffff12, 0 8px 24px #1424391f;
+  backdrop-filter: blur(28px) saturate(1.25);
+  -webkit-backdrop-filter: blur(28px) saturate(1.25);
+  pointer-events: auto;
+}
+.tech-dock li { flex: none; }
+.tech-app {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: .5px solid rgba(0, 0, 0, .06);
+  border-radius: 9px;
+  background: linear-gradient(180deg, #ffffff 0%, #f4f4f6 100%);
+  box-shadow:
+    inset 0 0 0 .5px rgba(255, 255, 255, .7),
+    inset 0 1px 0 rgba(255, 255, 255, .9),
+    0 1px 1.5px rgba(0, 0, 0, .08),
+    0 3px 6px rgba(20, 20, 30, .08);
+  text-decoration: none;
+  transition: transform 160ms, box-shadow 160ms;
+}
+.tech-app img, .tech-app svg { display: block; width: 26px; height: 26px; object-fit: contain; flex: none; }
+.tech-react { background: linear-gradient(180deg, #2f353c 0%, #20242a 100%); }
+.tech-figma { background: linear-gradient(180deg, #2a2a2a 0%, #1a1a1a 100%); }
+.tech-react, .tech-figma {
+  border-color: rgba(0, 0, 0, .25);
+  box-shadow:
+    inset 0 0 0 .5px rgba(255, 255, 255, .14),
+    inset 0 1px 0 rgba(255, 255, 255, .12),
+    0 1px 1.5px rgba(0, 0, 0, .1),
+    0 3px 6px rgba(20, 20, 30, .1);
+}
+.tech-ai { padding: 0; color: #55565c; }
+.tech-app:hover, .tech-app:focus-visible { transform: translateY(-3px); }
+.tech-app:focus-visible { outline-offset: 3px; }
+.tech-tooltip {
+  position: absolute;
+  bottom: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 5px 9px;
+  border: 1px solid #ffffff30;
+  border-radius: 6px;
+  background: #303034ed;
+  color: #fff;
+  font-size: 11px;
+  line-height: 16px;
+  white-space: nowrap;
+  box-shadow: 0 3px 10px #00000015;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 120ms;
+}
+.tech-app:hover .tech-tooltip, .tech-app:focus-visible .tech-tooltip { visibility: visible; opacity: 1; }
+.tech-stack:has(.tech-app:hover) .tech-stack-title, .tech-stack:focus-within .tech-stack-title { opacity: 0; }
+
+@media (min-width: 901px) {
+  .workspace { min-height: 100svh; height: 100svh; }
+}
+
+.desktop-status {
+  position: fixed;
+  z-index: 850;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: var(--desktop-status-height);
+  min-height: var(--desktop-status-height);
+  padding: 8px 3.2% var(--desktop-bottom-inset);
+  flex-wrap: nowrap;
+  align-items: flex-end;
+  pointer-events: none;
+}
+.desktop-status p { flex: none; white-space: nowrap; line-height: 14px; }
+.desktop-status .minimized-windows {
+  order: 0;
+  flex-basis: auto;
+  min-width: 0;
+  max-width: max(0px, calc((100vw - var(--desktop-dock-width)) / 2 - 3.2vw - 16px));
+  flex-wrap: nowrap;
+  margin-left: auto;
+  overflow-x: auto;
+  pointer-events: auto;
+  scrollbar-width: thin;
+}
+.minimized-windows button { flex: none; }
+
+@media (max-width: 1099px) {
+  .desktop-status { bottom: calc(var(--tech-stack-height) - var(--desktop-bottom-inset) + 4px); }
+  .desktop-status .minimized-windows { max-width: none; }
+}
+
+@media (max-width: 960px) {
+  .tech-stack { padding-left: 10px; padding-right: 10px; }
+  .tech-dock { gap: 6px; padding: 10px; overflow-x: auto; overscroll-behavior-inline: contain; scrollbar-width: thin; border-radius: 18px; }
+  .tech-app { width: 40px; height: 54px; flex-direction: column; gap: 3px; border-radius: 9px; }
+  .tech-app img, .tech-app svg { width: 24px; height: 24px; }
+  .tech-tooltip { position: static; padding: 0; border: 0; transform: none; border-radius: 0; background: none; box-shadow: none; color: #5c5c63; font-size: 9px; line-height: 12px; opacity: 1; visibility: visible; }
+  .tech-react .tech-tooltip, .tech-figma .tech-tooltip { color: #f3f3f6; }
+  .tech-stack:has(.tech-app:hover) .tech-stack-title, .tech-stack:focus-within .tech-stack-title { opacity: 1; }
+}
+
+.ai-tools-popover {
+  position: fixed;
+  z-index: 2;
+  width: 260px;
+  max-width: calc(100vw - 24px);
+  padding: 12px;
+  border: 1px solid #ffffffdd;
+  border-radius: 16px;
+  background: #f8f8fbde;
+  box-shadow: 0 10px 30px #20202720, 0 0 0 1px #00000010;
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  pointer-events: auto;
+}
+.ai-tools-popover[hidden] { display: none; }
+.ai-tools-heading { margin: 0 0 10px; color: #6e6e73; font-size: 11px; font-weight: 500; text-align: center; }
+.ai-tool-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.ai-tool-link { display: flex; flex-direction: column; align-items: center; gap: 7px; padding: 4px 0; border-radius: 9px; color: #424247; font-size: 10px; line-height: 14px; text-align: center; text-decoration: none; }
+.ai-tool-link:hover, .ai-tool-link:focus-visible { background: #00000006; }
+.ai-tool-icon { display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; border: 1px solid #0000000b; border-radius: 11px; background: #fff; box-shadow: 0 2px 5px #2020270c; }
+.ai-tool-mark { display: block; width: 28px; height: 28px; background: #303034; mask: var(--ai-logo) center / contain no-repeat; -webkit-mask: var(--ai-logo) center / contain no-repeat; }
+.ai-openai { --ai-logo: url('/assets/tech/openai.svg'); }
+.ai-claude { --ai-logo: url('/assets/tech/claude.svg'); }
+.ai-claude .ai-tool-mark { background: #d97757; }
+.ai-copilot { --ai-logo: url('/assets/tech/copilot.svg'); }
+
+@media (min-width: 961px) {
+  .tech-ai[aria-expanded="true"] .tech-tooltip { visibility: hidden; opacity: 0; }
+}
+
+/* Wide screens: the dock and copyright stay pinned to the bottom of the window at any height;
+   the icon area (the board the engine lays out on) stops above them so nothing slides underneath. */
+@media (min-width: 1140px) {
+  :root { --dock-reserve: 104px; }
+  .desktop { bottom: var(--dock-reserve); }
+}
+
+/* Dims the desktop, widgets and dock while an app/folder window is open (the menu bar stays above). */
+.window-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgba(8, 12, 20, .42);
+  pointer-events: auto;
+  animation: window-backdrop-in 180ms ease-out;
+}
+.window-backdrop[hidden] { display: none; }
+@keyframes window-backdrop-in { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .window-backdrop { animation: none; } }
