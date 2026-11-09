@@ -7,7 +7,7 @@ export function AboutContent() {
   return (
     <section className="about-summary">
       <h2>{person.name}</h2>
-      <p className="about-subtitle">{person.role}</p>
+      {/* <p className="about-subtitle">{person.role}</p> */}
       <p className="about-bio">{person.about}</p>
       <div className="about-actions">
         <ExternalLink href={person.github} label="GitHub" icon={<SocialIcon name="github" />} />
