@@ -1,11 +1,9 @@
 export interface Person {
   name: string;
   role: string;
-  intro: string;
   about: string;
   github: string;
   linkedin: string;
-  interests: string[];
 }
 
 export interface Education {
@@ -35,7 +33,6 @@ export interface Project {
   date: string;
   /** Cover screenshot file name in public/assets. */
   image: string;
-  images: string[];
   github: string;
   live: string | null;
 }

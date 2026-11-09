@@ -63,7 +63,8 @@ export function createDodgingTrash({ element, workspace, getPosition, setPositio
     const pointer = { x, y };
     const currentRect = { ...current, ...size };
     const dragged = validRect(draggedRect) ? draggedRect : null;
-    if (pointDistance(pointer, currentRect) > 130 && !(dragged && overlaps(currentRect, dragged, 16))) return false;
+    // Only dodge when something is actually dragged over the Trash: the pointer is on it, or the dragged item overlaps it.
+    if (pointDistance(pointer, currentRect) > 0 && !(dragged && overlaps(currentRect, dragged))) return false;
     const now = performance.now();
     if (!force && now - lastDodge < 120) return false;
 

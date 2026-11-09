@@ -3,15 +3,9 @@ import type { Education, Experience, Person } from './types';
 export const person: Person = {
   name: "Xiaoya Zou",
   role: "👩🏻‍💻 Software developer",
-  intro: "I build web and mobile apps, and explore applied AI.",
-  about: "I'm studying Computer Science at Sheridan College in Canada. I build web and mobile apps and I'm interested in AI. I also like camping, cycling and snowboarding.",
+  about: "I'm studying Computer Science at Sheridan College. I build web and mobile apps and I'm interested in AI. I also like camping, cycling and snowboarding.",
   github: "https://github.com/xiaoyazz",
-  linkedin: "https://www.linkedin.com/in/xiaoyazou/",
-  interests: [
-    "Camping",
-    "Cycling",
-    "Snowboarding"
-  ]
+  linkedin: "https://www.linkedin.com/in/xiaoyazou/"
 };
 
 export const education: Education = {

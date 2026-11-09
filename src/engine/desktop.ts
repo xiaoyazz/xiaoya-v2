@@ -64,7 +64,7 @@ const galleryItem: DesktopItem = { id: 'gallery', label: 'Photos', kind: 'galler
 // Not 'library': that id belongs to the Library project.
 const libraryItem: DesktopItem = { id: 'photo-library', label: 'Photos', kind: 'library', icon: 'icons/photos-app.svg' };
 const folders: DesktopItem[] = [
-  { id: 'projects', label: 'Projects', icon: 'icons/folder-blue.svg', kind: 'folder', position: [.422, .627] },
+  { id: 'projects', label: 'Projects', icon: 'icons/folder-blue.svg', kind: 'folder', position: [.335, .627] },
 ];
 const catalog: DesktopItem[] = [...folders,
   { id: 'hello', label: 'RESUME.txt', kind: 'document', icon: 'icons/document.svg', position: [.188, .773] },
@@ -96,17 +96,16 @@ export function startDesktop(): void {
   const toolbar = document.querySelector<HTMLElement>('.desktop-bar')!;
   const appMenuToggle = $<HTMLButtonElement>('app-menu-toggle');
   const appMenu = $('app-menu');
-  const folderMenuToggle = $<HTMLButtonElement>('folders-toggle');
-  const folderMenu = $('folder-popup');
-  const menuPairs: [HTMLElement, HTMLElement][] = [[appMenuToggle, appMenu], [folderMenuToggle, folderMenu]];
+  const menuPairs: [HTMLElement, HTMLElement][] = [[appMenuToggle, appMenu]];
 
   let storage: Storage | null;
   try { storage = window.localStorage; } catch { storage = null; }
   let saved = readLayout(storage, storageKey);
   let galleryDismissed = false;
-  try { galleryDismissed = storage?.getItem(galleryPreferenceKey) === 'closed'; } catch { /* ignore */ }
   let messageDismissed = false;
-  try { messageDismissed = storage?.getItem(messagePreferenceKey) === 'closed'; } catch { /* ignore */ }
+  // Messages and Photos always start open; closing them only lasts until the next page load.
+  // Clear the old saved "closed" flags from earlier versions of the site.
+  try { storage?.removeItem(galleryPreferenceKey); storage?.removeItem(messagePreferenceKey); } catch { /* ignore */ }
 
   let photosLauncher!: HTMLElement;
   let messagesLauncher!: HTMLElement;
@@ -139,21 +138,13 @@ export function startDesktop(): void {
   const visibleWindows = () => [...openWindows.values()].filter(item => !item.minimized && !item.responsiveSuspended).sort((a, b) => Number(a.el.style.zIndex) - Number(b.el.style.zIndex));
 
   // ---- Menu bar --------------------------------------------------------------------------
-  function visibleHeaderOpener(opener: HTMLElement | null, id?: string): HTMLElement | null {
-    const nav = $('folder-nav');
-    if (opener?.closest('#folder-nav') && getComputedStyle(nav).display === 'none') return folderMenuToggle;
-    if (opener === folderMenuToggle && getComputedStyle(folderMenuToggle.parentElement!).display === 'none') {
-      return [...nav.querySelectorAll<HTMLElement>('[data-menu-open]')].find(button => button.dataset.menuOpen === id) || nav.querySelector('button') || appMenuToggle;
-    }
-    return opener;
-  }
   function closeMenus(restore = false): boolean {
     let opener: HTMLElement | null = null;
     for (const [toggle, popup] of menuPairs) {
       if (!popup.hidden) opener = toggle;
       popup.hidden = true; toggle.setAttribute('aria-expanded', 'false');
     }
-    if (restore) visibleHeaderOpener(opener)?.focus({ preventScroll: true });
+    if (restore) opener?.focus({ preventScroll: true });
     return Boolean(opener);
   }
   function toggleMenu(toggle: HTMLElement, popup: HTMLElement) {
@@ -287,14 +278,12 @@ export function startDesktop(): void {
     widgetDragging?.cancel('messages');
     messageDismissed = true; messageGreeting.hidden = true; messagesLauncher.hidden = false;
     workspace.classList.remove('has-message-greeting');
-    try { storage?.setItem(messagePreferenceKey, 'closed'); } catch { /* ignore */ }
     scheduleLayout(); messagesLauncher.focus({ preventScroll: true });
     announce('Greeting closed. Open Messages on the desktop to read it again.');
   }
   function openMessageGreeting({ focus = false } = {}) {
     messageDismissed = false; messageGreeting.hidden = false; messagesLauncher.hidden = true;
     workspace.classList.add('has-message-greeting');
-    try { storage?.removeItem(messagePreferenceKey); } catch { /* ignore */ }
     scheduleLayout();
     if (focus) messageGreeting.querySelector<HTMLElement>('[data-message-close]')!.focus({ preventScroll: true });
   }
@@ -453,8 +442,7 @@ export function startDesktop(): void {
     if (photosLauncher.hidden !== wasHidden) scheduleLayout();
   }
   function restoreFocus(state: WindowState) {
-    let opener: HTMLElement | null = state.opener?.isConnected && !state.opener.closest('.desktop-window[hidden]') ? state.opener : null;
-    opener = visibleHeaderOpener(opener, state.key);
+    const opener = state.opener?.isConnected && !state.opener.closest('.desktop-window[hidden]') ? state.opener : null;
     const origin = state.originWindow?.isConnected && !state.originWindow.hidden ? state.originWindow.querySelector<HTMLElement>('.window-header') : null;
     (opener || origin || elements.get(state.item.id) || elements.get('projects'))?.focus({ preventScroll: true });
   }
@@ -468,7 +456,6 @@ export function startDesktop(): void {
     cancelWindowDrag(state);
     state.galleryRoot?.galleryController.setVisible(false);
     galleryDismissed = true;
-    try { storage?.setItem(galleryPreferenceKey, 'closed'); } catch { /* ignore */ }
     state.minimized = true; state.el.hidden = true; state.el.setAttribute('aria-hidden', 'true');
     activeWindow = null;
     const remaining = visibleWindows();
@@ -559,7 +546,6 @@ export function startDesktop(): void {
     }
     content.scrollTop = 0;
     requestAnimationFrame(() => syncScrollHint(state));
-    state.el.querySelector<HTMLElement>('.window-actions')!.hidden = !project || Boolean(folderRoot);
     const status = item.id === 'projects' ? `${projects.length} projects` : item.kind === 'folder' ? '1 folder' : escape(item.label);
     footer.innerHTML = `<span>${item.kind === 'photo' ? 'Preview' : item.kind === 'document' ? 'Plain text' : 'Xiaoya’s desktop'}</span><span>${status}</span>`;
     updateTray();
@@ -575,16 +561,16 @@ export function startDesktop(): void {
     const isGallery = item.kind === 'gallery';
     // Photos scales with the screen (about a quarter of its width), keeping the same proportions.
     const galleryWidth = clamp(board().width * .22, 270, 360); // portrait photos
-    const width = Math.min(isGallery ? galleryWidth : item.kind === 'library' ? 480 : item.id === 'terminal' ? 660 : isProfile ? 460 : item.id === 'hello' ? 760 : item.kind === 'photo' ? 940 : 900, area.width);
-    let height = Math.min(isGallery ? Math.round(galleryWidth * 1.33) : item.kind === 'library' ? libraryHeight(Math.min(480, area.width)) : item.id === 'terminal' ? 450 : isProfile ? 500 : item.id === 'hello' ? 620 : item.kind === 'photo' ? 640 : 610, area.height);
+    const width = Math.min(isGallery ? galleryWidth : item.kind === 'library' ? 480 : item.id === 'terminal' ? 660 : isProfile ? 460 : item.id === 'hello' ? 760 : 900, area.width);
+    let height = Math.min(isGallery ? Math.round(galleryWidth * 1.33) : item.kind === 'library' ? libraryHeight(Math.min(480, area.width)) : item.id === 'terminal' ? 450 : isProfile ? 500 : item.id === 'hello' ? 620 : 610, area.height);
     const offset = isProfile || isGallery ? 0 : (openWindows.size % 4) * 23;
     const wideGallery = isGallery && board().width >= COMPACT_MAX_WIDTH + 1;
     const x = clamp(wideGallery ? board().width * .732 : isGallery ? board().width - width - 36 : (board().width - width) / 2 + offset, area.x, area.x + area.width - width);
-    // Projects and project previews open higher, leaving a 16px gap above the Tech Stack dock.
-    if (!isCompact() && (item.id === 'projects' || item.kind === 'photo')) {
+    // Projects opens higher, leaving a 16px gap above the Tech Stack dock.
+    if (!isCompact() && item.id === 'projects') {
       const dockTop = document.querySelector('.tech-stack')!.getBoundingClientRect().top - workspace.getBoundingClientRect().top;
       const bottom = dockTop > area.y ? Math.min(area.y + area.height, dockTop - 16) : area.y + area.height;
-      const y = Math.min(area.y + (item.kind === 'photo' ? 24 : 12), Math.max(area.y, bottom - 250));
+      const y = Math.min(area.y + 12, Math.max(area.y, bottom - 250));
       height = Math.min(height, Math.max(250, bottom - y));
       return { x, y, width, height };
     }
@@ -593,7 +579,7 @@ export function startDesktop(): void {
   }
   function openItem(id: string, openerOverride: HTMLElement | null = null, { focus = true } = {}) {
     const item = itemFor(id); if (!item) return;
-    if (item.kind === 'gallery') { galleryDismissed = false; try { storage?.removeItem(galleryPreferenceKey); } catch { /* ignore */ } }
+    if (item.kind === 'gallery') galleryDismissed = false;
     const existing = openWindows.get(id);
     if (existing) {
       existing.opener = openerOverride || elements.get(id) || document.activeElement as HTMLElement | null;
@@ -605,7 +591,7 @@ export function startDesktop(): void {
     const titleId = `desktop-window-title-${++serial}`;
     el.className = 'desktop-window'; el.dataset.window = id;
     el.setAttribute('role', 'dialog'); el.setAttribute('aria-labelledby', titleId);
-    el.innerHTML = `<header class="window-header" tabindex="0" aria-label="Move this window with arrow keys"><div class="traffic-lights"><button class="traffic-close" data-window-action="close" aria-label="Close window"><span aria-hidden="true">×</span></button><button class="traffic-minimize" data-window-action="minimize" aria-label="Minimize window"><span aria-hidden="true">−</span></button><button class="traffic-zoom" data-window-action="zoom" aria-label="Toggle window size" aria-pressed="false"><span aria-hidden="true">+</span></button></div><nav class="window-breadcrumb" aria-label="Folder navigation" hidden></nav><span class="window-title" id="${titleId}"></span><div class="window-actions" hidden><button data-window-action="previous" aria-label="Previous project">‹</button><button data-window-action="next" aria-label="Next project">›</button></div></header><div class="window-main"><nav class="window-sidebar" aria-label="Folder shortcuts"></nav><div class="window-content"></div><button class="scroll-hint" type="button" tabindex="-1" aria-label="Scroll down for more" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 6 4.5 4.5L12.5 6"/></svg></button></div><footer class="window-footer"></footer>`;
+    el.innerHTML = `<header class="window-header" tabindex="0" aria-label="Move this window with arrow keys"><div class="traffic-lights"><button class="traffic-close" data-window-action="close" aria-label="Close window"><span aria-hidden="true">×</span></button><button class="traffic-minimize" data-window-action="minimize" aria-label="Minimize window"><span aria-hidden="true">−</span></button><button class="traffic-zoom" data-window-action="zoom" aria-label="Toggle window size" aria-pressed="false"><span aria-hidden="true">+</span></button></div><nav class="window-breadcrumb" aria-label="Folder navigation" hidden></nav><span class="window-title" id="${titleId}"></span></header><div class="window-main"><nav class="window-sidebar" aria-label="Folder shortcuts"></nav><div class="window-content"></div><button class="scroll-hint" type="button" tabindex="-1" aria-label="Scroll down for more" hidden><svg viewBox="0 0 16 16" aria-hidden="true"><path d="m3.5 6 4.5 4.5L12.5 6"/></svg></button></div><footer class="window-footer"></footer>`;
     const opener = openerOverride || elements.get(id) || document.activeElement as HTMLElement | null;
     const state: WindowState = { key: id, item, el, opener, originWindow: opener?.closest<HTMLElement>('.desktop-window') ?? null, bounds: defaultWindowBounds(item), maximized: false, minimized: false, createdCompact: isCompact() };
     openWindows.set(id, state); windowsLayer.append(el);
@@ -702,11 +688,6 @@ export function startDesktop(): void {
         state.el.querySelector<HTMLElement>('[data-window-action="back"]')!.focus({ preventScroll: true });
         return;
       }
-      if (action === 'previous' || action === 'next') {
-        const index = projects.findIndex(project => project.id === state.item.id);
-        const next = projects[(index + (action === 'next' ? 1 : -1) + projects.length) % projects.length];
-        renderWindow(state, itemFor(next.id)!); return;
-      }
       const navigation = target.closest<HTMLElement>('[data-navigate]');
       if (navigation) { renderWindow(state, catalogItem(navigation.dataset.navigate!)); return; }
       const open = target.closest<HTMLElement>('[data-open]');
@@ -784,14 +765,12 @@ export function startDesktop(): void {
   // Top-bar links: each folder, then Photos (opens the photo library window).
   const menuLinks = [...folders, libraryItem].map(entry => `<button data-menu-open="${entry.id}">${escape(entry.label)}</button>`).join('');
   $('folder-nav').innerHTML = menuLinks;
-  folderMenu.innerHTML = menuLinks;
   toolbar.addEventListener('click', event => {
     const target = event.target as Element;
     if (target.closest('#app-menu-toggle')) { toggleMenu(appMenuToggle, appMenu); return; }
-    if (target.closest('#folders-toggle')) { toggleMenu(folderMenuToggle, folderMenu); return; }
     const button = target.closest<HTMLElement>('[data-menu-open]');
     if (button) {
-      const opener = appMenu.contains(button) ? appMenuToggle : folderMenu.contains(button) ? folderMenuToggle : button;
+      const opener = appMenu.contains(button) ? appMenuToggle : button;
       closeMenus(); openItem(button.dataset.menuOpen!, opener, { focus: button.dataset.menuOpen !== 'gallery' || event.detail === 0 }); return;
     }
     if (target.closest('#tidy')) closeMenus(true);
@@ -811,16 +790,7 @@ export function startDesktop(): void {
   });
   toolbar.addEventListener('focusout', event => { if (event.relatedTarget && !toolbar.contains(event.relatedTarget as Node)) closeMenus(); });
   document.addEventListener('click', event => { if (!toolbar.contains(event.target as Node)) closeMenus(); });
-  window.addEventListener('resize', () => {
-    const focused = document.activeElement as HTMLElement | null;
-    const inCompact = focused === folderMenuToggle || folderMenu.contains(focused);
-    const inWide = Boolean(focused?.closest('#folder-nav'));
-    const open = closeMenus();
-    if (open || inCompact || inWide) {
-      const opener = inCompact ? folderMenuToggle : inWide ? focused : appMenuToggle;
-      visibleHeaderOpener(opener, focused?.dataset?.menuOpen)?.focus({ preventScroll: true });
-    }
-  });
+  window.addEventListener('resize', () => { if (closeMenus()) appMenuToggle.focus({ preventScroll: true }); });
   initAiTools();
 
   // ---- Start ------------------------------------------------------------------------------

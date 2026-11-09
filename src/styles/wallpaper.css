@@ -14,10 +14,8 @@ body::before {
   inset: 0;
   z-index: -1;
   background: #075a91 url("/assets/wallpaper/desktop-wallpaper.jpg") center / cover no-repeat;
-  /* Soft, nostalgic look: gentle blur, slightly faded and warm. Tweak --wallpaper-blur to taste. */
-  filter: blur(var(--wallpaper-blur, 4px)) saturate(.82) sepia(.14) contrast(.94) brightness(1.03);
-  transform: scale(1.06);
-  /* hides the blur's soft edge at the screen borders */
+  /* Soft, nostalgic tone: slightly faded and warm (no blur). */
+  filter: saturate(.65) sepia(.14) contrast(.94) brightness(.84);
   pointer-events: none;
 }
 

@@ -17,10 +17,7 @@ export const projects: Project[] = [
       "REST APIs"
     ],
     date: "Oct 26, 2025",
-    image: "lunaCare.png",
-    images: [
-      "lunaCare.png"
-    ],
+    image: "lunaCare.jpg",
     github: "https://github.com/xiaoyazz/luna-doctor-portal",
     live: "https://newlunacare.web.app/"
   },
@@ -35,10 +32,7 @@ export const projects: Project[] = [
       "C#"
     ],
     date: "March 26, 2025",
-    image: "RollBall.png",
-    images: [
-      "RollBall.png"
-    ],
+    image: "RollBall.jpg",
     github: "https://github.com/xiaoyazz/RollABall",
     live: null
   },
@@ -56,12 +50,7 @@ export const projects: Project[] = [
       "Cloud"
     ],
     date: "March 19, 2025",
-    image: "Library.png",
-    images: [
-      "Library.png",
-      "Library2.png",
-      "Library3.png"
-    ],
+    image: "Library.jpg",
     github: "https://github.com/xiaoyazz/Assignment2.1_XiaoyaZou",
     live: null
   },
@@ -77,10 +66,7 @@ export const projects: Project[] = [
       "Food Management"
     ],
     date: "February 1, 2024",
-    image: "SmartFood.png",
-    images: [
-      "SmartFood.png"
-    ],
+    image: "SmartFood.jpg",
     github: "https://github.com/xiaoyazz/Smart-Food",
     live: null
   },
@@ -96,10 +82,7 @@ export const projects: Project[] = [
       "Fitness Tracking"
     ],
     date: "January 20, 2024",
-    image: "GEM.png",
-    images: [
-      "GEM.png"
-    ],
+    image: "GEM.jpg",
     github: "https://github.com/xiaoyazz/workout-app",
     live: null
   },
@@ -115,10 +98,7 @@ export const projects: Project[] = [
       "Web Development"
     ],
     date: "October 10, 2023",
-    image: "feedbackApp.png",
-    images: [
-      "feedbackApp.png"
-    ],
+    image: "feedbackApp.jpg",
     github: "https://github.com/xiaoyazz/feedback-app",
     live: null
   },
@@ -134,9 +114,6 @@ export const projects: Project[] = [
     ],
     date: "September 5, 2023",
     image: "quiz.jpeg",
-    images: [
-      "quiz.jpeg"
-    ],
     github: "https://github.com/xiaoyazz/Quiz",
     live: "https://xiaoyazz.github.io/Quiz/"
   },
@@ -152,10 +129,7 @@ export const projects: Project[] = [
       "Location API"
     ],
     date: "August 15, 2023",
-    image: "WeatherApp.png",
-    images: [
-      "weather1.jpeg"
-    ],
+    image: "WeatherApp.jpg",
     github: "https://github.com/xiaoyazz/Weather-Application",
     live: "https://xiaoyazz.github.io/Weather-Application/"
   }
