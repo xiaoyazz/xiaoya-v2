@@ -72,7 +72,7 @@ const catalog: DesktopItem[] = [...folders,
   { id: 'messages', label: 'Messages', kind: 'app', icon: 'icons/messages-app.svg', position: [.403, .327] },
   { id: 'terminal', label: 'Terminal', kind: 'app', icon: 'icons/terminal.svg', position: [.622, .43] },
   { id: 'techstack', label: 'Tech Stack', kind: 'app', position: [.5, .8] },
-  { id: 'trash', label: 'Trash', kind: 'app', icon: 'icons/trash.svg', position: [.659, .809] },
+  { id: 'trash', label: 'Trash', kind: 'app', icon: 'icons/trash.svg', position: [.64, .64] },
 ];
 /** App order on the compact home screen. */
 const mobileOrder = ['terminal', 'projects', 'hello', 'photos', 'techstack', 'messages', 'trash']; // Trash is desktop-only; the Tech Stack folder is compact-only.
