@@ -28,7 +28,7 @@ export function CoffeeButton() {
         {/* A new key restarts the shake animation on every click. */}
         <img key={shakes} className={shakes ? 'is-shaking' : undefined} src="assets/icons/iced-coffee.png" alt="" width={26} height={26} />
       </button>
-      <p className="coffee-message" role="status" hidden={!showMessage}>Enough caffeine today! ☕️</p>
+      <p className="coffee-message" role="status" hidden={!showMessage}>okay enough caffeine today 🫪</p>
     </div>
   );
 }
