@@ -189,7 +189,8 @@ body { padding-bottom: 0; }
   .desktop { bottom: var(--dock-reserve); }
 }
 
-/* Dims the desktop, widgets and dock while an app/folder window is open (the menu bar stays above). */
+/* Dims the desktop, widgets and dock while an app/folder window is open (the menu bar stays above).
+   Purely visual: the engine closes the front window when empty desktop space is clicked. */
 .window-backdrop {
   position: fixed;
   inset: 0;
@@ -197,7 +198,7 @@ body { padding-bottom: 0; }
   background: rgba(6, 8, 14, .66);
   backdrop-filter: blur(.5px);
   -webkit-backdrop-filter: blur(.5px);
-  pointer-events: auto;
+  pointer-events: none; /* clicks reach the icons, widgets and dock underneath */
   animation: window-backdrop-in 180ms ease-out;
 }
 .window-backdrop[hidden] { display: none; }

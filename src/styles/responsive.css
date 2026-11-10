@@ -275,6 +275,10 @@
   .desktop-window .traffic-minimize, .desktop-window .traffic-zoom { display: none; }
   .desktop-window .window-sidebar { display: none; }
   .desktop-window .window-content { padding: 24px; }
+  /* Windows here size to their content. Safari collapses a flex:1 (0% basis) body inside a
+     fit-content window to zero height, so the body starts from its content size and only shrinks
+     (and scrolls) when the window hits its max height. */
+  .desktop-window:not(.gallery-window) .window-main { flex: 1 1 auto; }
   .desktop-window.gallery-window .window-content { padding: 0; }
   .desktop-window.about-window .window-header { min-height: 40px; }
   .desktop-window.about-window .window-content { padding: 0 20px 22px; }

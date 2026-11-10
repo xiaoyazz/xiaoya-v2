@@ -663,8 +663,9 @@ export function startDesktop(): void {
       else openItem(id);
       return;
     }
-    // Clicking the dimmed area closes the window in front.
-    if (target === windowBackdrop) { closeWindow(activeWindow ? openWindows.get(activeWindow) : visibleWindows().at(-1)); return; }
+    // The dim layer lets clicks through, so icons and widgets still work while windows are open (they stay open).
+    // Clicking empty desktop space closes only the window in front.
+    if (!windowBackdrop.hidden && target === workspace) { closeWindow(activeWindow ? openWindows.get(activeWindow) : visibleWindows().at(-1)); return; }
     const el = target.closest<HTMLElement>('.desktop-window');
     if (el) {
       const state = openWindows.get(el.dataset.window!)!;
