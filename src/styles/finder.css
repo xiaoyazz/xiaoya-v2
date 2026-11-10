@@ -12,7 +12,6 @@
 
 .desktop-title { gap: 10px; font-size: 14px; font-weight: 600; }
 
-.desktop-bar > button { color: #585b61; font-size: 13px; }
 .header-socials { display: flex; align-items: center; gap: 2px; }
 .header-socials a {
   display: inline-flex;
@@ -52,7 +51,6 @@
 .window-content h2 { letter-spacing: -.025em; font-weight: 600; }
 .window-content p, .preview-details p { color: #42454a; font-size: 14px; line-height: 1.65; }
 
-.interests { color: #4e5259; font-size: 13px; }
 
 .job h3 { color: #292b30; font-size: 17px; }
 .job h4 { color: #4d525b; font-size: 14px; }
@@ -66,7 +64,6 @@
 
 @media (max-width: 900px) {
   .desktop-title { font-size: 14px; }
-  .desktop-bar > button { font-size: 12px; }
   .desktop-item.folder, .desktop-item.document, .desktop-item.app { width: 120px; }
   .desktop-item.folder .icon-art, .desktop-item.document .icon-art { width: 88.8px; height: 74px; }
   .desktop-item.app .icon-art { width: 74px; height: 74px; }

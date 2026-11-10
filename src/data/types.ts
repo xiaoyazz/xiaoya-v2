@@ -1,6 +1,5 @@
 export interface Person {
   name: string;
-  role: string;
   /** Label/value rows in the About window, like the specs in About This Mac. */
   about: [label: string, value: string][];
   github: string;

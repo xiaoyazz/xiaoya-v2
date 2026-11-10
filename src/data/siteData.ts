@@ -2,7 +2,6 @@ import type { Education, Experience, Person } from './types';
 
 export const person: Person = {
   name: "Xiaoya Zou",
-  role: "👩🏻‍💻 Software developer",
   about: [
     ["Studying", "Computer Science"],
     ["Into", "Full-stack, web, mobile and AI"]
